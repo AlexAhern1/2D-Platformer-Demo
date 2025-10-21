@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a32666fcd9f9348bb6abaacd10a9f0, type: 3}
+  m_Name: Enemy Tracker
+  m_EditorClassIdentifier: 
+  _spawnNewEnemyEvent: {fileID: 11400000, guid: f70394db8b786334f97a1de0ac933998, type: 2}

@@ -1,0 +1,10 @@
+
+# names
+{
+0: test
+}
+
+# adjacency list
+[
+0: ()
+]

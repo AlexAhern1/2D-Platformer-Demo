@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ff7d45d167e984f9d9b60c54a3591a, type: 3}
+  m_Name: Highlight Button Sound 1
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: -4013589170571014565, guid: 113b8c32ea9563e4e8a7b039e5f9f504, type: 2}
+  dataCollection:
+  - {fileID: 8300000, guid: 40cb3f5f98eac0e4db51daa1887d547e, type: 3}
+  Volume: 1
+  Pitch: 1

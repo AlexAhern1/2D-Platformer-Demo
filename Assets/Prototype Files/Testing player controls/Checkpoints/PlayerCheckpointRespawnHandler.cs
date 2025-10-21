@@ -1,0 +1,101 @@
+using System.Threading.Tasks;
+using UnityEngine;
+
+namespace Game.Player
+{
+    public class PlayerCheckpointRespawnHandler : MonoBehaviour
+    {
+        [Header("damage info")]
+        [SerializeField] private PlayerTakeDamageEvent _damageable;
+        [SerializeField] private ResourceSO _playerHealth;
+
+        [Header("Positioning")]
+        [SerializeField] private Transform _playerTransform;
+        [SerializeField] private Vector2Reference _checkpointReference;
+
+        [Header("Input")]
+        [SerializeField] private GameEvent _disableInputEvent;
+        [SerializeField] private GameEvent _enableLevelInputEvent;
+
+        [Header("Black screen")]
+        [SerializeField] private FloatEvent _fadeInEvent;
+        [SerializeField] private FloatEvent _fadeOutEvent;
+
+        [SerializeField] private float _delayBeforeStarting;
+        [SerializeField] private float _fadeInTime;
+        [SerializeField] private float _lingerTime;
+        [SerializeField] private float _fadeOutTime;
+
+        private void OnEnable()
+        {
+            _damageable.AddEvent(OnTakeDamage);
+        }
+
+        private void OnDisable()
+        {
+            _damageable.RemoveEvent(OnTakeDamage);
+        }
+
+        private void OnTakeDamage(PlayerHealthChangeData data)
+        {
+            if (_playerHealth.Current == 0) return;
+            else if (data.Weapon == WeaponType.Hazard)
+            {
+                HandleRespawning();
+            }
+        }
+
+        private async void HandleRespawning()
+        {
+            // 1 disable any currently displaying UI (event)
+
+            // 2 disable player controls (event)
+            _disableInputEvent.Raise();
+
+            // 3 set player to be invulnerable (field: player damage config class)
+
+            // 4 play damage animation (field: animtion clip + animation handler)
+
+            // 4.5 wait for a tiny delay before fading in the black screen
+            await Wait(_delayBeforeStarting);
+
+            // 5 fade in black screen
+            _fadeInEvent.Raise(_fadeInTime);
+
+            // 6 wait for black screen to fade in completely (await/coroutine event?)
+            await Wait(_fadeInTime);
+
+            // 7 teleport player to spawn point (field: player spawnpoint data container)
+            _playerTransform.position = _checkpointReference.Value;
+
+            // 8 SNAP CAMERA to player
+
+            // 8.5 let the black screen linger for a short while
+            await Wait(_lingerTime);
+
+            // 9 play respawning animation (field: player animation clip + animation handler, similar to 3)
+
+            // 10 fade out black screen
+            _fadeOutEvent.Raise(_fadeOutTime);
+
+            // 11 wait for black screen to fade out completely
+            await Wait(_fadeOutTime);
+
+            // 12 remove player invulnerability (similar to 2)
+
+            // 13 re-enable player controls (similar to 1)
+            _enableLevelInputEvent.Raise();
+        }
+
+        // waiting method - to be moved into static async helpers
+        private async Task Wait(float seconds)
+        {
+            float elapsedTime = 0f;
+            while (elapsedTime < seconds)
+            {
+                await Task.Yield();
+                elapsedTime += Time.deltaTime;
+            }
+        }
+    }
+}

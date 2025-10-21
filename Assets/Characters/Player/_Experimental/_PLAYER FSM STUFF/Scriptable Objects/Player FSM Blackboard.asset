@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b92545e97aa761e4aae8f58b696d7c81, type: 3}
+  m_Name: Player FSM Blackboard
+  m_EditorClassIdentifier: 
+  CollisionEvent: {fileID: 11400000, guid: f84c2893ad0e0914fabc73ad54dc49ef, type: 2}
+  _walkingSpeed: 2.5
+  _runningSpeed: 10
+  _jumpHeight: 25
+  _maxFallSpeed: 30
+  _quickFallGravityScale: 32
+  _coyoteTimeInterval: 0.05
+  _bufferTimeDuration: 0.1
+  _maxHealth: 1500
+  _maxStatic: 100
+  _startingStatic: 50
+  _resetStaticOnPlaymode: 0
+  _airJumps: 1
+  _dodgeSpeed: 25
+  _dodgeDuration: 0.2
+  _wallJumpHeight: 15
+  _wallJumpHorizontalDistance: 8
+  _wallJumpDuration: 0.15
+  _wallSlideSpeedRatio: 0.3
+  _attackDuration: 0.2
+  _attackCooldown: 0.4
+  _verticalEnergyBlastUnlocked: 1
+  _EnergylaserUnlocked: 1
+  _verticalPowerDashUnlocked: 1
+  _PowerlaunchUnlocked: 1

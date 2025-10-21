@@ -1,0 +1,16 @@
+
+# names
+{
+0: forward slash,
+1: followup slash*,
+2: low sweep,
+3: uppercut.
+}
+
+# adjacency list
+[
+0: (1);
+1: ();
+2: ();
+3: ()
+]
