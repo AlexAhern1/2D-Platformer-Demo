@@ -3,7 +3,7 @@ using UnityEngine;
 namespace Game
 {
     [RequireComponent(typeof(Camera))]
-    public class CameraController : MonoBehaviour
+    public class CameraController : MonoBehaviour, IInitializable, IEnable
     {
         [SerializeField] private Camera _camera;
 
@@ -23,6 +23,12 @@ namespace Game
         [Header("Dynamic variables")]
         [SerializeField] private Rect _cameraBounds;
 
+        [Header("Change Camera Event")]
+        [SerializeField] private ChangeCameraEvent _changeCameraEvent;
+
+        [Header("Default Camera")]
+        [SerializeField] private CameraChangeSettings _defaultCameraSettings;
+
         // camera shaking
         private bool _isShaking;
         private float _shakingTime;
@@ -34,30 +40,23 @@ namespace Game
         private float _lerpDuration;
         private float _lerpDurationInverse;
 
-        public void SwitchCamera(ICameraController cam, float time)
+        public void Enable()
         {
-            _currentCameraController = cam;
-            _isLerping = time > 0;
-
-            if (_isLerping)
-            {
-                _lerpTime = 0;
-                _lerpDuration = time;
-                _lerpDurationInverse = 1f / time;
-            }
-            else
-            {
-                _cachedData = cam.UpdateCamera();
-                SetCameraData(_cachedData);
-                UpdateCameraSize();
-            }
+            _changeCameraEvent.AddEvent(OnChangeCamera);
         }
 
-        public void SwitchCamera(ICameraController cam, Rect bounds, float time)
+        public void Disable()
         {
-            SwitchCamera(cam, time);
+            _changeCameraEvent.RemoveEvent(OnChangeCamera);
+        }
 
-            _cameraBounds = bounds;
+        public void Initialize()
+        {
+            _cachedData = default;
+
+            _defaultCameraShaker = new NoCameraShake();
+            _cameraShaker = _defaultCameraShaker;
+            _changeCameraEvent.Raise(_defaultCameraSettings);
         }
 
         public void SetCameraShake(ICameraShaker shaker, float duration)
@@ -70,31 +69,25 @@ namespace Game
             _shakeEndTime = _shakingTime + duration;
         }
 
-        private void Awake()
+        private void OnChangeCamera(CameraChangeSettings settings)
         {
-            // need to initialize camera data
-            _cachedData = new()
+            _currentCameraController = settings.CameraController;
+            float changeDuration = settings.CameraChangeDuration;
+
+            _isLerping = changeDuration > 0;
+
+            if (_isLerping)
             {
-                Position = _camera.transform.position,
-                Angle = _camera.transform.eulerAngles.z,
-                Size = _camera.orthographicSize
-            };
-
-
-            _currentCameraController = new DefaultCameraController
+                _lerpTime = 0;
+                _lerpDuration = changeDuration;
+                _lerpDurationInverse = 1f / changeDuration;
+            }
+            else
             {
-                Data = new CameraData
-                {
-                    Position = transform.position,
-                    Angle = transform.eulerAngles.z,
-                    Size = _camera.orthographicSize
-                }
-            };
-
-            _defaultCameraShaker = new NoCameraShake();
-            _cameraShaker = _defaultCameraShaker;
-
-            UpdateCameraSize();
+                _cachedData = _currentCameraController.UpdateCamera();
+                SetCameraData(_cachedData);
+                UpdateCameraSize();
+            }
         }
 
         private void Update()

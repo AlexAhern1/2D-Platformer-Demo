@@ -9,7 +9,7 @@ namespace Game
 
         public void AddEvent(Action<Damage> e) => damageEvent += e;
 
-        public void RemoveEvent(Action<Damage > e) => damageEvent -= e;
+        public void RemoveEvent(Action<Damage> e) => damageEvent -= e;
 
         public virtual void TakeDamage(Damage damage)
         {

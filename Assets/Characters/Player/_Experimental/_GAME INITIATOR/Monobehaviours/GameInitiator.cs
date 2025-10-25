@@ -9,10 +9,13 @@ namespace Game
     public class GameInitiator : MonoBehaviour
     {
         [Header("Initializable bindigs")]
-        [SerializeField] private InterfaceReference<GameObject, IInitializable>[] _initializableObjects;
+        [SerializeField] private InterfaceReference<MonoBehaviour, IInitializable>[] _initializableObjects;
 
         [Header("Enable or Disable bindings")]
-        [SerializeField] private InterfaceReference<GameObject, IEnable>[] _enableOrDisableObjects;
+        [SerializeField] private InterfaceReference<MonoBehaviour, IEnable>[] _enableOrDisableObjects;
+
+        [Header("Second Initializable bindings")]
+        [SerializeField] private InterfaceReference<MonoBehaviour, IInitializable>[] _secondInitializableObjects;
 
         private void Awake()
         {
@@ -29,9 +32,19 @@ namespace Game
             DisableObjects();
         }
 
+        private void Start()
+        {
+            InitializeObjectsRound2();
+        }
+
         private void InitializeObjects()
         {
             for (int i = 0; i < _initializableObjects.Length; i++) _initializableObjects[i].Interface.Initialize();
+        }
+
+        private void InitializeObjectsRound2()
+        {
+            for (int i = 0; i < _secondInitializableObjects.Length; i++) _secondInitializableObjects[i].Interface.Initialize();
         }
 
         private void EnableObjects()

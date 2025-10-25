@@ -9,9 +9,8 @@ namespace Game.World
         [SerializeField] int availableHits;
         int hitsLeft;
 
-        [SerializeField] FloatEvent giveStaticEvent;
-
-        //private IDamageableOLD _damageable;
+        [SerializeField] private FloatEvent _addStaticEvent;
+        [SerializeField] private Damageable _damgeableComponent;
 
         public Action<int> UpdateCurrentValue { get; set; }
         public Action<int, int> UpdateRange { get; set; }
@@ -21,26 +20,21 @@ namespace Game.World
             return staticGainOnHit;
         }
 
-        private void Awake()
-        {
-            //_damageable = GetComponent<IDamageableOLD>();
-        }
-
         private void OnEnable()
         {
-            //_damageable.ReceiveDamageEvent += OnHit;
+            _damgeableComponent.AddEvent(OnHit);
         }
 
         private void OnDisable()
         {
-            //_damageable.ReceiveDamageEvent -= OnHit;
+            _damgeableComponent.RemoveEvent(OnHit);
         }
 
-        //private void OnHit(DamageDataOLD data)
-        //{
-        //    if (hitsLeft == 0) return;
-        //    GivePlayerStatic();
-        //}
+        private void OnHit(Damage damage)
+        {
+            if (hitsLeft == 0) return;
+            GivePlayerStatic();
+        }
 
         private void Start()
         {
@@ -52,8 +46,10 @@ namespace Game.World
 
         private void GivePlayerStatic()
         {
-            giveStaticEvent.Raise(staticGainOnHit);
-            hitsLeft--;
+            if (_addStaticEvent != null) _addStaticEvent.Raise(staticGainOnHit);
+            else Logger.Warn("No add static event");
+
+                hitsLeft--;
             UpdateCurrentValue?.Invoke(hitsLeft);
         }
     }

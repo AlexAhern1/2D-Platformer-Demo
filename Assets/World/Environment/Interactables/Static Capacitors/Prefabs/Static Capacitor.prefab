@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 7176360243221592719}
   - component: {fileID: 7176360243221592718}
   - component: {fileID: 7176360243221592713}
-  - component: {fileID: 5037600397873593730}
+  - component: {fileID: 1254030145493601000}
   m_Layer: 14
   m_Name: Static Capacitor
   m_TagString: Untagged
@@ -398,8 +398,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   staticGainOnHit: 10
   availableHits: 3
-  giveStaticEvent: {fileID: 11400000, guid: 84791d5bb9766d646bef5c17bb76ec0f, type: 2}
---- !u!114 &5037600397873593730
+  _addStaticEvent: {fileID: 0}
+  _damgeableComponent: {fileID: 1254030145493601000}
+--- !u!114 &1254030145493601000
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,11 +409,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 7176360243221592722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9df97fbeb108c584db852ac199b81a0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 6fa58190f695341429c99aae968a50d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  displayID: Static Capacitor
-  textBox: {fileID: 2664636440687301026}
 --- !u!1 &7176360243902824805
 GameObject:
   m_ObjectHideFlags: 0

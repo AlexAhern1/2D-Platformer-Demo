@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 namespace Game
 {
+    [Obsolete]
     public class TestingCameraSwapper : MonoBehaviour
     {
         [SerializeReference, SubclassSelector]
@@ -20,23 +22,23 @@ namespace Game
         [Header("Settings")]
         [SerializeField] private bool _applyControllerOnStart;
 
-        public void Swap()
-        {
-            Logger.Log("swapping cameras");
-            Rect bounds = new Rect(_center - 0.5f * _size, _size);
+        //public void Swap()
+        //{
+        //    Logger.Log("swapping cameras");
+        //    Rect bounds = new Rect(_center - 0.5f * _size, _size);
 
-            _controller.SwitchCamera(_strategy, bounds, _switchTime);
-        }
+        //    //_controller.SwitchCamera(_strategy, bounds, _switchTime);
+        //}
 
-        public void Shake()
-        {
-            _controller.SetCameraShake(_shaker, _shakeDuration);
-        }
+        //public void Shake()
+        //{
+        //    _controller.SetCameraShake(_shaker, _shakeDuration);
+        //}
 
-        private void Start()
-        {
-            if (_applyControllerOnStart) Swap();
-        }
+        //private void Start()
+        //{
+        //    if (_applyControllerOnStart) Swap();
+        //}
 
         private void OnDrawGizmosSelected()
         {

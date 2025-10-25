@@ -5,6 +5,9 @@ namespace Game.Player
 {
     public class PlayerCheckpointRespawnHandler : MonoBehaviour
     {
+        [Header("Player components")]
+        [SerializeField] private PlayerMovementPhysics _physics;
+
         [Header("damage info")]
         [SerializeField] private PlayerTakeDamageEvent _damageable;
         [SerializeField] private ResourceSO _playerHealth;
@@ -47,6 +50,11 @@ namespace Game.Player
 
         private async void HandleRespawning()
         {
+            // 0 set gravity scale, fall speed and velocity directions to 0
+            _physics.SetGravityScale(0);
+            _physics.SetMaxFallSpeed(0);
+            _physics.Move(Vector2.zero, true);
+
             // 1 disable any currently displaying UI (event)
 
             // 2 disable player controls (event)
@@ -85,6 +93,10 @@ namespace Game.Player
 
             // 13 re-enable player controls (similar to 1)
             _enableLevelInputEvent.Raise();
+
+            // 14 reset gravity scale and fall speed
+            _physics.ResetGravityScale();
+            _physics.ResetMaxFallSpeed();
         }
 
         // waiting method - to be moved into static async helpers

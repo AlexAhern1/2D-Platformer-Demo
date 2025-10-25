@@ -59,6 +59,7 @@ namespace Game
             }
             else
             {
+                Logger.Log($"{Particles}, {Spawnpoint}, {Rotation}");
                 particles = GameObject.Instantiate(Particles, Spawnpoint.Get(), Rotation.Get());
             }
 
