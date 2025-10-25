@@ -5,17 +5,6 @@ namespace Game.Player
     public class PlayerDamageable : Damageable
     {
         [SerializeField] private Damage _selfDamage;
-        [SerializeField] private PlayerFSMBlackboard _blackboard;
-
-        [Header("Resources")]
-        [SerializeField] private ResourceSO _playerHealthResource;
-
-        // NOTE - observing max health changes (and updating current health) should be done in another script.
-        // for now, do everything here as a proper FLOW of logic has yet to be defined.
-        [SerializeField] private Stat _maxHealthStat;
-
-        [Header("Events")]
-        [SerializeField] private PlayerTakeDamageEvent _takeDamageEvent;
 
         [Header("Resistances (stored here until shared)")]
         [SerializeField][Range(0.01f, 100f)] private float _physicalResist;
@@ -23,6 +12,8 @@ namespace Game.Player
         [SerializeField][Range(0.01f, 100f)] private float _electricalResist;
         [SerializeField][Range(0.01f, 100f)] private float _chemicalResist;
         [SerializeField] private float _staggerResistance;
+
+        [SerializeField] private PlayerDamageResponseHandler _responseHandler;
 
         public override void TakeDamage(Damage damage)
         {
@@ -70,40 +61,13 @@ namespace Game.Player
             damageTypesTaken.TotalDamage = totalDamageTaken;
             damageTypesTaken.DamageTypes = damageTypes;
 
-            _playerHealthResource.Add(-totalDamageTaken);
-
-            RaiseDamageEvent(damage);
-
-            var healthChangeData = new PlayerHealthChangeData()
-            {
-                DamageTaken = damageTypesTaken,
-                Weapon = damage.Weapon,
-                StaggerStrength = damage.StaggerDamage,
-                StaggerResistance = _staggerResistance
-            };
-
-            _takeDamageEvent.Raise(healthChangeData);
+            _responseHandler.ProcessDamageAppliedToPlayer(damage, damageTypesTaken);
         }
 
         public void SelfInflictDamage()
         {
             Logger.Log("Self-inflicted Damage.", Logger.Combat, MoreColors.Lilac);
             TakeDamage(_selfDamage);
-        }
-
-        private void OnEnable()
-        {
-            _maxHealthStat.AddOnChangeEvent(OnMaxHealthChange);
-        }
-
-        private void OnDisable()
-        {
-            _maxHealthStat.RemoveOnChangeEvent(OnMaxHealthChange);
-        }
-
-        private void OnMaxHealthChange(float newMaxHealth)
-        {
-            _playerHealthResource.Set(Mathf.Min(_playerHealthResource.Current, newMaxHealth));
         }
     }
 }

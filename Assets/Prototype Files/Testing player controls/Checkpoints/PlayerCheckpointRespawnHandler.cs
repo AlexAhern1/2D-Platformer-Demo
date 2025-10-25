@@ -7,49 +7,104 @@ namespace Game.Player
     {
         [Header("Player components")]
         [SerializeField] private PlayerMovementPhysics _physics;
-
-        [Header("damage info")]
-        [SerializeField] private PlayerTakeDamageEvent _damageable;
-        [SerializeField] private ResourceSO _playerHealth;
+        [SerializeField] private FXPlayer _fxPlayer;
+        [SerializeField] private Animator _animator;
 
         [Header("Positioning")]
         [SerializeField] private Transform _playerTransform;
         [SerializeField] private Vector2Reference _checkpointReference;
+        [SerializeField] private Vector2Reference _restpointReference;
 
         [Header("Input")]
         [SerializeField] private GameEvent _disableInputEvent;
         [SerializeField] private GameEvent _enableLevelInputEvent;
 
-        [Header("Black screen")]
+        [Header("FX IDs")]
+        [SerializeField] private int _nonLethalDamageFXID;
+        [SerializeField] private int _lethalDamageFXID;
+        [SerializeField] private int _deathDespawnFXID;
+
+        [Header("Animation clips")]
+        [SerializeField] private AnimationClip _takeLethalDamageAnimation;
+        [SerializeField] private AnimationClip _playerDisappearAnimation;
+        [SerializeField] private AnimationClip _playerReappearAnimation;
+        [SerializeField] private AnimationClip _idleAnimation;
+
+        [Header("black screen events")]
         [SerializeField] private FloatEvent _fadeInEvent;
         [SerializeField] private FloatEvent _fadeOutEvent;
 
+        [Header("hazard settings")]
         [SerializeField] private float _delayBeforeStarting;
         [SerializeField] private float _fadeInTime;
         [SerializeField] private float _lingerTime;
         [SerializeField] private float _fadeOutTime;
 
-        private void OnEnable()
+        [Header("death settings")]
+        [SerializeField] private float _delayBeforeDeathBlackScreen;
+        [SerializeField] private float _delayForDeathParticles;
+
+        [Header("Health data")]
+        [SerializeField] private ResourceSO _playerCurrentHealth;
+        [SerializeField] private Stat _playerMaxHealth;
+
+        public async void HandleDeathRespawning()
         {
-            _damageable.AddEvent(OnTakeDamage);
+            _disableInputEvent.Raise();
+
+            _physics.SetGravityScale(0);
+            _physics.SetMaxFallSpeed(0);
+            _physics.Move(Vector2.zero, true);
+
+            _animator.Play(_takeLethalDamageAnimation.name);
+            _fxPlayer.Play(_lethalDamageFXID);
+
+            await Wait(_delayBeforeDeathBlackScreen);
+
+            _animator.Play(_playerDisappearAnimation.name);
+            _fxPlayer.Play(_deathDespawnFXID);
+
+            await Wait(_delayForDeathParticles);
+
+            _fadeInEvent.Raise(_fadeInTime);
+
+            await Wait(_fadeInTime);
+
+            _playerTransform.position = _restpointReference.Value;
+
+            // 8 SNAP CAMERA to player
+
+            // 8.5 let the black screen linger for a short while
+            await Wait(_lingerTime);
+
+            // 9 play respawning animation (field: player animation clip + animation handler, similar to 3)
+            _animator.Play(_playerReappearAnimation.name);
+
+            // reset player health
+            _playerCurrentHealth.Set(_playerMaxHealth.Value);
+
+            // 10 fade out black screen
+            _fadeOutEvent.Raise(_fadeOutTime);
+
+            // 11 wait for black screen to fade out completely
+            await Wait(_fadeOutTime);
+
+            // 12 remove player invulnerability (similar to 2)
+
+            // 13 re-enable player controls (similar to 1)
+            _enableLevelInputEvent.Raise();
+
+            // 14 reset gravity scale and fall speed
+            _physics.ResetGravityScale();
+            _physics.ResetMaxFallSpeed();
         }
 
-        private void OnDisable()
+        public async void HandleHazardRespawning()
         {
-            _damageable.RemoveEvent(OnTakeDamage);
-        }
+            // -1 play FX (done here in case additional fx needs to be played AFTER respawning. this is an async method so it is a perfect place to set it up here.
+            _fxPlayer.Play(_nonLethalDamageFXID);
 
-        private void OnTakeDamage(PlayerHealthChangeData data)
-        {
-            if (_playerHealth.Current == 0) return;
-            else if (data.Weapon == WeaponType.Hazard)
-            {
-                HandleRespawning();
-            }
-        }
 
-        private async void HandleRespawning()
-        {
             // 0 set gravity scale, fall speed and velocity directions to 0
             _physics.SetGravityScale(0);
             _physics.SetMaxFallSpeed(0);

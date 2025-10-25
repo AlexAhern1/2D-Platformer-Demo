@@ -810,7 +810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4754556293384799439, guid: 44b9cf31f0363a84084ccbe91d2e4902, type: 3}
       propertyPath: _contactDamage.RawDamage.Array.data[0].DamageType.Amount
-      value: 3
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44b9cf31f0363a84084ccbe91d2e4902, type: 3}

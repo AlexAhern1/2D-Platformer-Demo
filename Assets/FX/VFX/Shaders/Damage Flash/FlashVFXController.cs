@@ -16,10 +16,10 @@ namespace Game
         [SerializeField] private string _flashColorName;
         [SerializeField] private string _flashAmountName;
 
+        // need an array of shader VFX configs so that we can select from a bunch.
+
         [Header("VFX Config")]
-        [SerializeField] private Color _flashColor;
-        [SerializeField] private AnimationCurve _colorCurve;
-        [SerializeField] private float _duration;
+        [SerializeField] private FlashConfig[] _flashes;
 
         private MaterialPropertyBlock _block;
         private Coroutine _flashCoroutine;
@@ -39,14 +39,20 @@ namespace Game
             }
         }
 
-        [ContextMenu("Start Flash")]
+        public void StartFlash(int flashID)
+        {
+            StopCurrentFlash();
+            _flashCoroutine = StartCoroutine(DoingFlash(flashID));
+        }
+
         public void StartFlash()
         {
-            StopFlash();
-            _flashCoroutine = StartCoroutine(DoingFlash());
+            Logger.Warn("OUTDATED FLASH METHOD - USE NEW ONE", MoreColors.Amber);
+            //StopFlash();
+            //_flashCoroutine = StartCoroutine(DoingFlash());
         }
-        [ContextMenu("Stop Flash")]
-        public void StopFlash()
+
+        public void StopCurrentFlash()
         {
             if (_flashCoroutine != null)
             {
@@ -62,24 +68,29 @@ namespace Game
             }
         }
 
-        private IEnumerator DoingFlash()
+        private IEnumerator DoingFlash(int flashID)
         {
+            var selectedFlash = _flashes[flashID];
+            var flashColor = selectedFlash.FlashColor;
+            var alphaCurve = selectedFlash.AlphaCurve;
+            var duration = selectedFlash.Duration;
+
             for (int i = 0; i < _renderers.Length; i++)
             {
                 _renderers[i].GetPropertyBlock(_block);
-                _block.SetColor(_flashColorName, _flashColor);
+                _block.SetColor(_flashColorName, flashColor);
                 _renderers[i].SetPropertyBlock(_block);
             }
 
             float normTime = 0;
-            float durationReciprocal = 1f / _duration;
+            float durationReciprocal = 1f / duration;
 
             while (normTime < 1)
             {
                 for (int i = 0; i < _renderers.Length; i++)
                 {
                     _renderers[i].GetPropertyBlock(_block);
-                    _block.SetFloat(_flashAmountName, _colorCurve.Evaluate(normTime));
+                    _block.SetFloat(_flashAmountName, alphaCurve.Evaluate(normTime));
                     _renderers[i].SetPropertyBlock(_block);
                 }
                 normTime += Time.deltaTime * durationReciprocal;

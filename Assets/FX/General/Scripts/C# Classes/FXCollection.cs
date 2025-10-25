@@ -71,8 +71,9 @@ namespace Game
     public class ShaderFX : FXBase
     {
         public FlashVFXController FlashController;
+        public int FlashID;
 
-        public override void Play() => FlashController.StartFlash();
+        public override void Play() => FlashController.StartFlash(FlashID);
     }
 
     [Serializable]
