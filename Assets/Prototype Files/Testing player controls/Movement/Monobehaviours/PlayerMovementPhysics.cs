@@ -93,17 +93,6 @@ namespace Game.Player
 
         public void OverrideHorizontalBaseVelocity(Func<float, float> speedGetter, float duration)
         {
-            // here, the anonymous function needs:
-            //  move input event E
-            //  animation curve C
-            //  movement speed S
-            //  time t
-
-            // return: E.x == 0 ? 0 : sign(E.x) * S * C.evaluate(t)
-            //  return: TrueSign(E.x) * S * C.evaluate(t)
-
-
-
             if (_baseVelocityOverriderCoroutine != null) StopCoroutine(_baseVelocityOverriderCoroutine);
             _baseVelocityOverriderCoroutine = StartCoroutine(BaseVelocityOverrider((float t) => new Vector2(speedGetter(t), _baseVelocity.y), duration));
         }

@@ -36,7 +36,7 @@ namespace Game.Player
 
         private void ProcessNormalDamage()
         {
-
+            Logger.Log("normal damage.");
         }
     }
 }

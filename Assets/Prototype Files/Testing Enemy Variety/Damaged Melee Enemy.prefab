@@ -628,6 +628,14 @@ PrefabInstance:
       propertyPath: managedReferences[-2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8805901288447252597, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
+      propertyPath: managedReferences[3310820319735316481]
+      value: Assembly-CSharp Game.Vector2Value
+      objectReference: {fileID: 0}
+    - target: {fileID: 8805901288447252597, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
+      propertyPath: managedReferences[3310820319735316482]
+      value: Assembly-CSharp Game.ZAxisRotationGetter
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
 --- !u!114 &395772308247173069 stripped

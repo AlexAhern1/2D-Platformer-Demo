@@ -9,15 +9,23 @@ namespace Game.Player
         [SerializeField] private PlayerMovementPhysics _physics;
         [SerializeField] private FXPlayer _fxPlayer;
         [SerializeField] private Animator _animator;
+        [SerializeField] private StateMachine _playerFSM;
+
+        [Header("Relevant states")]
+        [SerializeField] private PlayerState _hazardRespawnState;
+        [SerializeField] private PlayerState _deathState;
+        [SerializeField] private PlayerState _idleState;
 
         [Header("Positioning")]
         [SerializeField] private Transform _playerTransform;
         [SerializeField] private Vector2Reference _checkpointReference;
         [SerializeField] private Vector2Reference _restpointReference;
 
-        [Header("Input")]
+        [Header("Events")]
         [SerializeField] private GameEvent _disableInputEvent;
         [SerializeField] private GameEvent _enableLevelInputEvent;
+        [SerializeField] private GameEvent _enableCollisionEvent;
+        [SerializeField] private GameEvent _disableCollisionEvent;
 
         [Header("FX IDs")]
         [SerializeField] private int _nonLethalDamageFXID;
@@ -28,7 +36,7 @@ namespace Game.Player
         [SerializeField] private AnimationClip _takeLethalDamageAnimation;
         [SerializeField] private AnimationClip _playerDisappearAnimation;
         [SerializeField] private AnimationClip _playerReappearAnimation;
-        [SerializeField] private AnimationClip _idleAnimation;
+        [SerializeField] private string _idleAnimationName;
 
         [Header("black screen events")]
         [SerializeField] private FloatEvent _fadeInEvent;
@@ -51,13 +59,19 @@ namespace Game.Player
         public async void HandleDeathRespawning()
         {
             _disableInputEvent.Raise();
+            _disableCollisionEvent.Raise();
+
+            _playerFSM.DoTransition(_deathState);
+
+            _animator.Play(_takeLethalDamageAnimation.name);
+            _fxPlayer.Play(_lethalDamageFXID);
+
+            await Wait(0.01f);
 
             _physics.SetGravityScale(0);
             _physics.SetMaxFallSpeed(0);
             _physics.Move(Vector2.zero, true);
 
-            _animator.Play(_takeLethalDamageAnimation.name);
-            _fxPlayer.Play(_lethalDamageFXID);
 
             await Wait(_delayBeforeDeathBlackScreen);
 
@@ -93,28 +107,34 @@ namespace Game.Player
 
             // 13 re-enable player controls (similar to 1)
             _enableLevelInputEvent.Raise();
+            _enableCollisionEvent.Raise();
 
             // 14 reset gravity scale and fall speed
             _physics.ResetGravityScale();
             _physics.ResetMaxFallSpeed();
+
+            _animator.Play(_idleAnimationName);
+
+            _playerFSM.DoTransition(_idleState);
         }
 
         public async void HandleHazardRespawning()
         {
+            _disableCollisionEvent.Raise();
+            _disableInputEvent.Raise();
+
+            // here, need to force a transition into the hurt phase to ensure no airborne logic gets ran.
+            _playerFSM.DoTransition(_hazardRespawnState);
+
             // -1 play FX (done here in case additional fx needs to be played AFTER respawning. this is an async method so it is a perfect place to set it up here.
             _fxPlayer.Play(_nonLethalDamageFXID);
 
+            await Wait(0.01f);
 
             // 0 set gravity scale, fall speed and velocity directions to 0
             _physics.SetGravityScale(0);
             _physics.SetMaxFallSpeed(0);
             _physics.Move(Vector2.zero, true);
-
-            // 1 disable any currently displaying UI (event)
-
-            // 2 disable player controls (event)
-            _disableInputEvent.Raise();
-
             // 3 set player to be invulnerable (field: player damage config class)
 
             // 4 play damage animation (field: animtion clip + animation handler)
@@ -148,10 +168,15 @@ namespace Game.Player
 
             // 13 re-enable player controls (similar to 1)
             _enableLevelInputEvent.Raise();
+            _enableCollisionEvent.Raise();
 
             // 14 reset gravity scale and fall speed
             _physics.ResetGravityScale();
             _physics.ResetMaxFallSpeed();
+
+            _animator.Play(_idleAnimationName);
+
+            _playerFSM.DoTransition(_idleState);
         }
 
         // waiting method - to be moved into static async helpers

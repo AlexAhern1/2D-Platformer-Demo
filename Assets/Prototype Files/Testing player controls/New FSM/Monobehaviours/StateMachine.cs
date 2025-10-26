@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.Player
 {
-    public class StateMachine : MonoBehaviour, IInitializable
+    public class StateMachine : MonoBehaviour, IInitializable, IEnable
     {
         [SerializeField] private int _initialQueueSize;
         [SerializeField] private PlayerState _currentState;

@@ -2345,50 +2345,34 @@ MonoBehaviour:
   _rendersParent: {fileID: 5049333831607504527}
   _flashColorName: _FlashColor
   _flashAmountName: _FlashAmount
-  _flashColor: {r: 1, g: 1, b: 1, a: 1}
-  _colorCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: -0
-      outSlope: 0
-      tangentMode: 5
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.46061453
-    - serializedVersion: 3
-      time: 0.74904513
-      value: 0.8501495
-      inSlope: -2.0054278
-      outSlope: -2.0054278
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.07935481
-      outWeight: 1
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -0.04538843
-      outSlope: -0.04538843
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.25268793
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _duration: 0.3
+  _flashes:
+  - Description: 
+    FlashColor: {r: 1, g: 1, b: 1, a: 1}
+    AlphaCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.043183744
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -1.9856392
+        outSlope: -1.9856392
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.5012701
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    Duration: 0.4
 --- !u!1 &5285098562433019911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3919,7 +3903,7 @@ MonoBehaviour:
     FXs:
     - rid: 983465184065224704
     - rid: 983465431998398466
-    - rid: 983465431998398467
+    - rid: 3310820319735316483
   references:
     version: 2
     RefIds:
@@ -3933,11 +3917,24 @@ MonoBehaviour:
       type: {class: ShaderFX, ns: Game, asm: Assembly-CSharp}
       data:
         FlashController: {fileID: 8406445657722425428}
-    - rid: 983465431998398467
+        FlashID: 0
+    - rid: 3310820319735316483
       type: {class: ParticleFX, ns: Game, asm: Assembly-CSharp}
       data:
         Particles: {fileID: 1484196285055668457, guid: 3d7630245f87f6e4b94b2e2956203397, type: 3}
-        Spawnpoint: {fileID: 4899238364056477745}
+        Parent: {fileID: 2303468061619576384}
+        Spawnpoint:
+          rid: 3310820319735316484
+        Rotation:
+          rid: 3310820319735316485
+    - rid: 3310820319735316484
+      type: {class: Vector2Value, ns: Game, asm: Assembly-CSharp}
+      data:
+        Value: {x: 0, y: 0}
+    - rid: 3310820319735316485
+      type: {class: ZAxisRotationGetter, ns: Game, asm: Assembly-CSharp}
+      data:
+        Degrees: 0
 --- !u!1 &8826856103549509362
 GameObject:
   m_ObjectHideFlags: 0

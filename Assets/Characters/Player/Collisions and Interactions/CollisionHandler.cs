@@ -9,13 +9,18 @@ namespace Game.Player
     ///<summary>
     ///Handles collision detection and updates the direction with which direction the game object collided towards.
     /// </summary>
-    public class CollisionHandler : MonoBehaviour
+    public class CollisionHandler : MonoBehaviour, IEnable
     {
+        [Header("Collider component")]
+        [SerializeField] private Collider2D _collider;
+
         [Header("Collision layers")]
         [SerializeField] private LayerMask _collisionMask;
 
         [Header("Events")]
         [SerializeField] private CollisionEvent _collisionEvent;
+        [SerializeField] private GameEvent _enablePlayerColliderEvent;
+        [SerializeField] private GameEvent _disablePlayerColliderEvent;
 
         // state variables
         private readonly CollisionData _data = new();
@@ -32,6 +37,18 @@ namespace Game.Player
 
         // events
         private event Action<CollisionData> _localCollisionEvent;
+
+        public void Enable()
+        {
+            _enablePlayerColliderEvent.AddEvent(OnEnableCollider);
+            _disablePlayerColliderEvent.AddEvent(OnDisableCollider);
+        }
+
+        public void Disable()
+        {
+            _enablePlayerColliderEvent.RemoveEvent(OnEnableCollider);
+            _disablePlayerColliderEvent.RemoveEvent(OnDisableCollider);
+        }
 
         public void AddCollisionEvent(Action<CollisionData> e) => _localCollisionEvent += e;
 
@@ -122,5 +139,9 @@ namespace Game.Player
             _localCollisionEvent?.Invoke(_data);
             _collisionEvent.Raise(_data);
         }
+
+        private void OnEnableCollider() => _collider.enabled = true;
+
+        private void OnDisableCollider() => _collider.enabled = false;
     }
 }

@@ -4,12 +4,15 @@ namespace Game.Player
 {
     public class PlayerController : MonoBehaviour, IEnable, IInitializable
     {
-        [SerializeField] private StateMachine _stateMachine;
         [SerializeField] private bool _manualStart;
 
         [Header("Initializable components")]
         [SerializeField]
         private InterfaceReference<MonoBehaviour, IInitializable>[] _initalizables;
+
+        [Header("Enable/Disable components")]
+        [SerializeField]
+        private InterfaceReference<MonoBehaviour, IEnable>[] _enables;
 
         public void Initialize()
         {
@@ -21,12 +24,18 @@ namespace Game.Player
 
         public void Enable()
         {
-            _stateMachine.Enable();
+            for (int i = 0; i < _enables.Length; i++)
+            {
+                _enables[i].Interface.Enable();
+            }
         }
 
         public void Disable()
         {
-            _stateMachine.Disable();
+            for (int i = 0; i < _enables.Length; i++)
+            {
+                _enables[i].Interface.Disable();
+            }
         }
 
         private void Awake()

@@ -628,6 +628,10 @@ MonoBehaviour:
   _physics: {fileID: 4297662894145550742}
   _fxPlayer: {fileID: 4698309130548598965}
   _animator: {fileID: 2238874108067469250}
+  _playerFSM: {fileID: 5573736692459156315}
+  _hazardRespawnState: {fileID: 5742284288325687785}
+  _deathState: {fileID: 3316983138513674226}
+  _idleState: {fileID: 4729819632435077364}
   _playerTransform: {fileID: 3649443669883861934}
   _checkpointReference:
     Preference: 0
@@ -639,13 +643,15 @@ MonoBehaviour:
     Variable: {fileID: 11400000, guid: 852280bfe09ea5c48848c854e8254028, type: 2}
   _disableInputEvent: {fileID: 11400000, guid: 00385dae61314e541847372911b95402, type: 2}
   _enableLevelInputEvent: {fileID: 11400000, guid: 519914ae4c1873d479fe613689bfd6b2, type: 2}
+  _enableCollisionEvent: {fileID: 11400000, guid: 9df68abf1b0b3e444954cbb6a60b3737, type: 2}
+  _disableCollisionEvent: {fileID: 11400000, guid: 87c0c99a02a6bac4890eece8b17a890c, type: 2}
   _nonLethalDamageFXID: 0
   _lethalDamageFXID: 2
   _deathDespawnFXID: 3
   _takeLethalDamageAnimation: {fileID: 7400000, guid: 11a31e0a576c0f145babe72b975acad9, type: 2}
   _playerDisappearAnimation: {fileID: 7400000, guid: 26dcbdb4ba4441e4da973d136df85213, type: 2}
   _playerReappearAnimation: {fileID: 7400000, guid: c664f0c03420d974eaeb4985b84f3cfe, type: 2}
-  _idleAnimation: {fileID: 7400000, guid: 92449ada06d91504cbad0a42d958b041, type: 2}
+  _idleAnimationName: Horizontal Movement Blending
   _fadeInEvent: {fileID: 11400000, guid: f21bc39f543a38e408a21cf1d48dca81, type: 2}
   _fadeOutEvent: {fileID: 11400000, guid: 369b12bde75d20e43a9854b19b94030e, type: 2}
   _delayBeforeStarting: 0.25
@@ -1842,10 +1848,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _behaviours: []
-  Console: {fileID: 0}
-  LogTransition: 0
-  EnterMessage: 
-  ExitMessage: 
+  Console: {fileID: 901075904020093503}
+  LogTransition: 1
+  EnterMessage: + die
+  ExitMessage: '- die'
   references:
     version: 2
     RefIds: []
@@ -2703,10 +2709,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _behaviours: []
-  Console: {fileID: 0}
-  LogTransition: 0
-  EnterMessage: 
-  ExitMessage: 
+  Console: {fileID: 901075904020093503}
+  LogTransition: 1
+  EnterMessage: + hazard
+  ExitMessage: '- hazard'
   references:
     version: 2
     RefIds: []
@@ -3549,11 +3555,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 959a9a2efb2d5c3498b2ebe8ec54b823, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stateMachine: {fileID: 5573736692459156315}
   _manualStart: 0
   _initalizables:
   - Object: {fileID: 5573736692459156315}
   - Object: {fileID: 2424568827812570714}
+  _enables:
+  - Object: {fileID: 3649443669883861932}
+  - Object: {fileID: 5573736692459156315}
 --- !u!114 &271513987890283258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3595,10 +3603,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edef671c845a2424b99ff17d170743d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _collider: {fileID: 3649443669883861930}
   _collisionMask:
     serializedVersion: 2
     m_Bits: 128
   _collisionEvent: {fileID: 11400000, guid: f84c2893ad0e0914fabc73ad54dc49ef, type: 2}
+  _enablePlayerColliderEvent: {fileID: 11400000, guid: 9df68abf1b0b3e444954cbb6a60b3737, type: 2}
+  _disablePlayerColliderEvent: {fileID: 11400000, guid: 87c0c99a02a6bac4890eece8b17a890c, type: 2}
 --- !u!114 &996309561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6115,10 +6126,10 @@ MonoBehaviour:
       rid: 8390863016309030998
     Trigger:
       rid: 8390863016309030997
-  Console: {fileID: 0}
-  LogTransition: 0
-  EnterMessage: 
-  ExitMessage: 
+  Console: {fileID: 901075904020093503}
+  LogTransition: 1
+  EnterMessage: + hurt
+  ExitMessage: '- hurt'
   references:
     version: 2
     RefIds:
@@ -6726,7 +6737,7 @@ MonoBehaviour:
     - rid: 8390862787675947037
   - InspectorName: On Take Lethal Damage (2)
     FXs:
-    - rid: 8390862787675947037
+    - rid: 3310820319735316480
     - rid: 3310820306862735360
     - rid: 3310820306862735363
   - InspectorName: On Death Despawn (3)
@@ -6829,6 +6840,12 @@ MonoBehaviour:
       type: {class: ZAxisRotationGetter, ns: Game, asm: Assembly-CSharp}
       data:
         Degrees: 0
+    - rid: 3310820319735316480
+      type: {class: AudioFX, ns: Game, asm: Assembly-CSharp}
+      data:
+        Audio:
+          _data: {fileID: 11400000, guid: 1b9397337b327c04e8c73e4932942010, type: 2}
+          _objectPrefab: {fileID: 4355307275000869106, guid: 90fe23273d60a3940a4f11bb12d308b9, type: 3}
     - rid: 8390862610551275521
       type: {class: ScreenShakeFX, ns: Game, asm: Assembly-CSharp}
       data:
@@ -6871,7 +6888,7 @@ MonoBehaviour:
       type: {class: AudioFX, ns: Game, asm: Assembly-CSharp}
       data:
         Audio:
-          _data: {fileID: 11400000, guid: 1b9397337b327c04e8c73e4932942010, type: 2}
+          _data: {fileID: 11400000, guid: b47599fa08acd9e449ed8b79ebd2e6d9, type: 2}
           _objectPrefab: {fileID: 4355307275000869106, guid: 90fe23273d60a3940a4f11bb12d308b9, type: 3}
 --- !u!114 &6287435547170187139
 MonoBehaviour:
@@ -8053,11 +8070,6 @@ MonoBehaviour:
       rid: 8390863130124353566
     Trigger:
       rid: 8390863130124353565
-  - Description: Null
-    Action:
-      rid: -2
-    Trigger:
-      rid: -2
   Console: {fileID: 901075904020093503}
   LogTransition: 1
   EnterMessage: + move
@@ -8807,11 +8819,6 @@ MonoBehaviour:
     Trigger:
       rid: -2
   - Description: TRANSITION -> special melee attack (input) [PENDING]
-    Action:
-      rid: -2
-    Trigger:
-      rid: -2
-  - Description: Null
     Action:
       rid: -2
     Trigger:
