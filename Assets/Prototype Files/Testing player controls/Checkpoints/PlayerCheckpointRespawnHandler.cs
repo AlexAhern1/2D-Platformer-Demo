@@ -26,6 +26,8 @@ namespace Game.Player
         [SerializeField] private GameEvent _enableLevelInputEvent;
         [SerializeField] private GameEvent _enableCollisionEvent;
         [SerializeField] private GameEvent _disableCollisionEvent;
+        [SerializeField] private GameEvent _playerDeathEvent;
+        [SerializeField] private GameEvent _useDefaultCameraEvent;
 
         [Header("FX IDs")]
         [SerializeField] private int _nonLethalDamageFXID;
@@ -84,9 +86,11 @@ namespace Game.Player
 
             await Wait(_fadeInTime);
 
+            _playerDeathEvent.Raise();
             _playerTransform.position = _restpointReference.Value;
 
-            // 8 SNAP CAMERA to player
+            // 8 SNAP CAMERA to player AND set camera mode to default. (just transition to default follow camera with transition time = 0 seconds)
+            _useDefaultCameraEvent.Raise();
 
             // 8.5 let the black screen linger for a short while
             await Wait(_lingerTime);

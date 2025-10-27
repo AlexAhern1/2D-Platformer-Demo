@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game.Enemy
@@ -14,6 +15,15 @@ namespace Game.Enemy
         [Header("Mediators")]
         [SerializeReference, SubclassSelector] 
         private HealthMediator _healthMediator;
+        [SerializeField] private bool _enableExternally;
+
+        // events
+        private Action _despawnEvent;
+
+        public void RestoreHealth()
+        {
+            _enemyHealthHandler.Initialize();
+        }
 
         public void Initialize()
         {
@@ -27,6 +37,7 @@ namespace Game.Enemy
         {
             FSM.Enable();
 
+            if (_enableExternally) return;
             _healthMediator.Enable();
         }
 
@@ -34,8 +45,19 @@ namespace Game.Enemy
         {
             FSM.Disable();
 
+            _despawnEvent?.Invoke();
+
+            if (_enableExternally) return;
             _healthMediator.Disable();
         }
+
+        public void AddDespawnObserver(Action e) => _despawnEvent += e;
+
+        public void RemoveDespawnObserver(Action e) => _despawnEvent -= e;
+
+        public void EnableHealthMediatorExternally() => _healthMediator.Enable();
+
+        public void DisableHealthMediatorExternally() => _healthMediator.Disable();
 
         private void Update()
         {

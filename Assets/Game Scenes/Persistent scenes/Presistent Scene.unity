@@ -376,6 +376,8 @@ MonoBehaviour:
     width: 350
     height: 110
   _changeCameraEvent: {fileID: 11400000, guid: a5fabcd9f5ff46743a1a1cac982883d8, type: 2}
+  _useDefaultCameraEvent: {fileID: 11400000, guid: 8f70412e9cb327346b0a75e69eb283c0, type: 2}
+  _useDefaultCameraEventWithTransitionDuration: {fileID: 11400000, guid: d53d573d47f1d494483e1ef20cf00bf2, type: 2}
   _defaultCameraSettings:
     CameraController:
       rid: 3310820298990551045
@@ -2327,11 +2329,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3649443669883861934, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 218.06973
+      value: 98.602295
       objectReference: {fileID: 0}
     - target: {fileID: 3649443669883861934, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -42.880177
+      value: -57.711052
       objectReference: {fileID: 0}
     - target: {fileID: 3649443669883861934, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
       propertyPath: m_LocalPosition.z

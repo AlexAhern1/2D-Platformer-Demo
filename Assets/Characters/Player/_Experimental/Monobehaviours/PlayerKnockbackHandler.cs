@@ -48,8 +48,7 @@ namespace Game.Player
         private async void DoKnockback(Vector2 attackSourcePosition)
         {
             float knockbackDirection = Mathf.Sign(transform.position.x - attackSourcePosition.x);
-            Logger.Log(knockbackDirection);
-
+            
             // disable input
             _disableInputEvent.Raise();
 

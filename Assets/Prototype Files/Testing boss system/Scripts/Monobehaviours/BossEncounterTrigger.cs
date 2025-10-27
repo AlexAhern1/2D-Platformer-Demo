@@ -21,5 +21,12 @@ namespace Game
             if (!collision.CompareTag(_playerTag)) return;
             GameEvent?.Invoke(collision.gameObject);
         }
+
+        // what must happen?
+        //  1) enter trigger area
+        //  2) block exits
+        //  3) enable boss health bar in HUD
+        //  4) swap camera
+        //  5) listen for when the player dies OR when the boss dies. (different consequences for each)
     }
 }

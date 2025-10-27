@@ -1550,6 +1550,50 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820343833427970]
+      value: Assembly-CSharp Game.ParticleFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820343833427971]
+      value: Assembly-CSharp Game.Vector2Value
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820343833427972]
+      value: Assembly-CSharp Game.ZAxisRotationGetter
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820343833427970].Parent
+      value: 
+      objectReference: {fileID: 3011723197237238425}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820343833427971].Value.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820343833427971].Value.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820343833427972].Degrees
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820343833427970].Rotation
+      value: 3310820343833427972
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820343833427970].Particles
+      value: 
+      objectReference: {fileID: 1484196285055668457, guid: 3d7630245f87f6e4b94b2e2956203397, type: 3}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: FXCollectionArray.Array.data[0].FXs.Array.data[1]
+      value: 3310820343833427970
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820343833427970].Spawnpoint
+      value: 3310820343833427971
+      objectReference: {fileID: 0}
     - target: {fileID: 7807100223285175261, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
       propertyPath: managedReferences[-2]
       value: 
@@ -1967,7 +2011,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8267778323022173398, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
   m_PrefabInstance: {fileID: 7653407006311997217}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3011723197237238425}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac719c4630c2bbe40bbf8f787c6059e8, type: 3}
@@ -1998,6 +2042,11 @@ MonoBehaviour:
 --- !u!4 &2995334272290345941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4875091320397171956, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+  m_PrefabInstance: {fileID: 7653407006311997217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3011723197237238425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4899238364895987128, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
   m_PrefabInstance: {fileID: 7653407006311997217}
   m_PrefabAsset: {fileID: 0}
 --- !u!50 &3011723198681792287 stripped
@@ -2037,7 +2086,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6466083464146872037, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
   m_PrefabInstance: {fileID: 7653407006311997217}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3011723197237238425}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fa58190f695341429c99aae968a50d7, type: 3}
@@ -2059,7 +2108,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2665353545892897678, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
   m_PrefabInstance: {fileID: 7653407006311997217}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3011723197237238425}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 218bc4befa7bd084ba88ac2e6052cbab, type: 3}

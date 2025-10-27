@@ -23,6 +23,8 @@ namespace Game
         [ContextMenu("Activate Elevator")]
         public void Activate()
         {
+            if (_isMoving) return;
+
             _isMoving = true;
             _currentTime = 0;
 

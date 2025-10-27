@@ -25,6 +25,8 @@ namespace Game
 
         [Header("Change Camera Event")]
         [SerializeField] private ChangeCameraEvent _changeCameraEvent;
+        [SerializeField] private GameEvent _useDefaultCameraEvent;
+        [SerializeField] private FloatEvent _useDefaultCameraEventWithTransitionDuration;
 
         [Header("Default Camera")]
         [SerializeField] private CameraChangeSettings _defaultCameraSettings;
@@ -43,11 +45,15 @@ namespace Game
         public void Enable()
         {
             _changeCameraEvent.AddEvent(OnChangeCamera);
+            _useDefaultCameraEvent.AddEvent(OnUseDefaultCamera);
+            _useDefaultCameraEventWithTransitionDuration.AddEvent(OnUseDefaultCamera);
         }
 
         public void Disable()
         {
             _changeCameraEvent.RemoveEvent(OnChangeCamera);
+            _useDefaultCameraEvent.RemoveEvent(OnUseDefaultCamera);
+            _useDefaultCameraEventWithTransitionDuration.RemoveEvent(OnUseDefaultCamera);
         }
 
         public void Initialize()
@@ -88,6 +94,17 @@ namespace Game
                 SetCameraData(_cachedData);
                 UpdateCameraSize();
             }
+        }
+
+        private void OnUseDefaultCamera()
+        {
+            OnChangeCamera(_defaultCameraSettings);
+        }
+
+        private void OnUseDefaultCamera(float transitionSeconds)
+        {
+            _defaultCameraSettings.CameraChangeDuration =   transitionSeconds;
+            OnChangeCamera(_defaultCameraSettings);
         }
 
         private void Update()

@@ -38,27 +38,28 @@ namespace Game.Enemy
     [System.Serializable]
     public class NPCHUDHealthMediator : HealthMediator
     {
-        [SerializeField] private BoolEvent _toggleHUDBossHealthEvent;
+        // toggling boss health bar will be done in a manager script.
+
         [SerializeField] private Vector2Event _initializeHealthEvent;
         [SerializeField] private FloatEvent _setCurrentHealthEvent;
+        [SerializeField] private BoolEvent _toggleHealthBarEvent;
 
         [SerializeField] private NPCHealthHandler _healthHandler;
 
         public override void Enable()
         {
-            _toggleHUDBossHealthEvent.Raise(true);
-
             _initializeHealthEvent.Raise(new Vector2(0, _healthHandler.MaxHealth));
             _setCurrentHealthEvent.Raise(_healthHandler.CurrentHealth);
 
             _healthHandler.AddHealthChangeEvent(OnHealthChanged);
+
+            _toggleHealthBarEvent.Raise(true);
         }
 
         public override void Disable()
         {
-            _toggleHUDBossHealthEvent.Raise(false);
-
             _healthHandler.RemoveHealthChangeEvent(OnHealthChanged);
+            _toggleHealthBarEvent.Raise(false);
         }
 
         private void OnHealthChanged()
