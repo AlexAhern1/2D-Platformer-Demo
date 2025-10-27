@@ -529,6 +529,17 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""7982312d-8876-439f-8348-6a7a225a9f19"",
+                    ""path"": ""<Keyboard>/v"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Scheme"",
+                    ""action"": ""Heal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""0e4ba445-b786-49e7-804e-eb41d128635e"",
                     ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",

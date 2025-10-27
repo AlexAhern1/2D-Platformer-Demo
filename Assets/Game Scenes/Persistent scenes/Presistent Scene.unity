@@ -1189,11 +1189,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fda6c3b75dd6a24e9de9043c1e749eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth:
+  _currentAmount:
     Preference: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: bd275ec092c563440afb78bf65bf1212, type: 2}
-  _maxHealthStat: {fileID: 11400000, guid: e37dc6f8364269c42a224d8f080d55bd, type: 2}
+  _maxAmountStat: {fileID: 11400000, guid: e37dc6f8364269c42a224d8f080d55bd, type: 2}
   _playerHealthBarUI: {fileID: 246526404}
   _playerRespawnEvent: {fileID: 11400000, guid: 99bbc88cd0f008d42a35c9bc09f3b072, type: 2}
 --- !u!114 &246526404
@@ -2323,17 +2323,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1542879559983494692}
     m_Modifications:
+    - target: {fileID: 3461214042196189851, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
+      propertyPath: _healCost
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461214042196189851, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
+      propertyPath: _healAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3461214042196189851, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
+      propertyPath: _currentHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: aaea5a246a0463c47ac40739d8428b4b, type: 2}
+    - target: {fileID: 3461214042196189851, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
+      propertyPath: _currentStatic
+      value: 
+      objectReference: {fileID: 11400000, guid: abee9021948336c4ea3c4c0cdb16e4f9, type: 2}
     - target: {fileID: 3649443669883861934, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
       propertyPath: m_RootOrder
       value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3649443669883861934, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 98.602295
+      value: 161.19698
       objectReference: {fileID: 0}
     - target: {fileID: 3649443669883861934, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -57.711052
+      value: -33.678753
       objectReference: {fileID: 0}
     - target: {fileID: 3649443669883861934, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4753,11 +4769,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fda6c3b75dd6a24e9de9043c1e749eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentHealth:
+  _currentAmount:
     Preference: 0
     ConstantValue: 0
     Variable: {fileID: 11400000, guid: abe1209eaf9a1594a9cabbcc4d3d04fd, type: 2}
-  _maxHealthStat: {fileID: 11400000, guid: e37dc6f8364269c42a224d8f080d55bd, type: 2}
+  _maxAmountStat: {fileID: 11400000, guid: 18a953ebe675c5f4b89960496f6a70e9, type: 2}
   _playerHealthBarUI: {fileID: 1283604859}
   _playerRespawnEvent: {fileID: 11400000, guid: 99bbc88cd0f008d42a35c9bc09f3b072, type: 2}
 --- !u!1001 &1308931885
@@ -8892,7 +8908,7 @@ PrefabInstance:
       objectReference: {fileID: 246526403}
     - target: {fileID: 8892974030440156287, guid: 9e3102086d3b25d4c8adcf99cf92548f, type: 3}
       propertyPath: _enableOrDisableObjects.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8892974030440156287, guid: 9e3102086d3b25d4c8adcf99cf92548f, type: 3}
       propertyPath: _secondInitializableObjects.Array.size
@@ -8912,6 +8928,10 @@ PrefabInstance:
       objectReference: {fileID: 246526403}
     - target: {fileID: 8892974030440156287, guid: 9e3102086d3b25d4c8adcf99cf92548f, type: 3}
       propertyPath: _enableOrDisableObjects.Array.data[2].Object
+      value: 
+      objectReference: {fileID: 1283604860}
+    - target: {fileID: 8892974030440156287, guid: 9e3102086d3b25d4c8adcf99cf92548f, type: 3}
+      propertyPath: _enableOrDisableObjects.Array.data[3].Object
       value: 
       objectReference: {fileID: 996309556}
     - target: {fileID: 8892974030440156287, guid: 9e3102086d3b25d4c8adcf99cf92548f, type: 3}

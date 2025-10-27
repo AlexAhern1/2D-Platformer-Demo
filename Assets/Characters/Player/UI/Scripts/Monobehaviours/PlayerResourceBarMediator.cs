@@ -5,8 +5,8 @@ namespace Game.Player
     public class PlayerResourceBarMediator : MonoBehaviour, IEnable
     {
         [Header("Values")]
-        [SerializeField] private FloatReference _currentHealth;
-        [SerializeField] private Stat _maxHealthStat;
+        [SerializeField] private FloatReference _currentAmount;
+        [SerializeField] private Stat _maxAmountStat;
 
         [Header("UI objects")]
         [SerializeField] private GaugeBarUI _playerHealthBarUI;
@@ -14,19 +14,19 @@ namespace Game.Player
 
         public void Enable()
         {
-            _playerHealthBarUI.SetMinAndMaxValues(0, _maxHealthStat.Value);
-            _playerHealthBarUI.SetCurrentValue(_currentHealth.Value);
+            _playerHealthBarUI.SetMinAndMaxValues(0, _maxAmountStat.Value);
+            _playerHealthBarUI.SetCurrentValue(_currentAmount.Value);
 
-            _currentHealth.AddEvent(OnCurrentHealthChanged);
-            _maxHealthStat.AddOnChangeEvent(OnMaxHealthChanged);
+            _currentAmount.AddEvent(OnCurrentHealthChanged);
+            _maxAmountStat.AddOnChangeEvent(OnMaxHealthChanged);
 
             _playerRespawnEvent.AddEvent(OnPlayerRespawn);
         }
 
         public void Disable()
         {
-            _currentHealth.RemoveEvent(OnCurrentHealthChanged);
-            _maxHealthStat.RemoveOnChangeEvent(OnMaxHealthChanged);
+            _currentAmount.RemoveEvent(OnCurrentHealthChanged);
+            _maxAmountStat.RemoveOnChangeEvent(OnMaxHealthChanged);
 
             _playerRespawnEvent.RemoveEvent(OnPlayerRespawn);
         }
@@ -43,7 +43,7 @@ namespace Game.Player
 
         private void OnPlayerRespawn()
         {
-            _playerHealthBarUI.SetCurrentValue(_maxHealthStat.Value);
+            _playerHealthBarUI.SetCurrentValue(_maxAmountStat.Value);
         }
     }
 }

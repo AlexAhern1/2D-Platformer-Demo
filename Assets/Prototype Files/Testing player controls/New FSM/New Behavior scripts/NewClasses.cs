@@ -359,22 +359,6 @@ namespace Game.Player
         }
     }
 
-    //  start attack state: needs to start a timer, while the 6 core substates need to wait for that timer (but not start it on enter)
-    //  idea 1: create a transitionhandler class that waits before transitioning.
-    //  problem: need to handle interruptions, so the cancellation callback must be known to all other scripts.
-
-    //  idea 2: create a dictionary of timers for the timer, which other classes can access 
-
-    //  note: for other abilities like the downward laser, the states don't rely on a timer, but instead an input EVENT.
-    //  specifically, in any of the downward laser substates, listen for input -> transition.
-
-    //  can we do the same for the timer?
-    //  possibility: give the attack an end event.
-    //  in any of the attack substates, listen for that event.
-
-
-
-
     [Serializable]
     public class TransitionContext
     {
@@ -397,6 +381,18 @@ namespace Game.Player
         public void DoAction()
         {
             Logger.Log(Message, Color);
+        }
+    }
+
+    [Serializable]
+    public class AddResourceAction : IStateAction
+    {
+        public ResourceSO Resource;
+        public float AddAmount; //this should be an ifloatgetter (or just a class which returns a float value)
+
+        public void DoAction()
+        {
+            Resource.Add(AddAmount);
         }
     }
 

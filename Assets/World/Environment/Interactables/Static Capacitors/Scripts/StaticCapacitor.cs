@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 namespace Game.World
@@ -11,6 +12,8 @@ namespace Game.World
 
         [SerializeField] private FloatEvent _addStaticEvent;
         [SerializeField] private Damageable _damgeableComponent;
+
+        [SerializeField] private TMP_Text _hitsLeftText;
 
         public Action<int> UpdateCurrentValue { get; set; }
         public Action<int, int> UpdateRange { get; set; }
@@ -34,6 +37,8 @@ namespace Game.World
         {
             if (hitsLeft == 0) return;
             GivePlayerStatic();
+
+            _hitsLeftText.text = $"{hitsLeft}/{availableHits}";
         }
 
         private void Start()

@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: static
+  m_text: +3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 348d28d36527c19438e24164ee4c1a32, type: 2}
   m_sharedMaterial: {fileID: -7053636277457137323, guid: 348d28d36527c19438e24164ee4c1a32, type: 2}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: hits
+  m_text: 5/5
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 348d28d36527c19438e24164ee4c1a32, type: 2}
   m_sharedMaterial: {fileID: -7053636277457137323, guid: 348d28d36527c19438e24164ee4c1a32, type: 2}
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -397,9 +397,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   staticGainOnHit: 10
-  availableHits: 3
-  _addStaticEvent: {fileID: 0}
+  availableHits: 5
+  _addStaticEvent: {fileID: 11400000, guid: eb0e69be66f7b0c46a1fa97387ea3088, type: 2}
   _damgeableComponent: {fileID: 1254030145493601000}
+  _hitsLeftText: {fileID: 4669689153560990035}
 --- !u!114 &1254030145493601000
 MonoBehaviour:
   m_ObjectHideFlags: 0
