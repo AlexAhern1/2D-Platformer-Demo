@@ -713,13 +713,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 794220581}
     m_Modifications:
+    - target: {fileID: 4438217713399718064, guid: 5c3f424e8617f9d4d81d6a052502be8b, type: 3}
+      propertyPath: ShowDebugTrajectory
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6736215656183159140, guid: 5c3f424e8617f9d4d81d6a052502be8b, type: 3}
       propertyPath: m_Name
       value: DR 1
       objectReference: {fileID: 0}
     - target: {fileID: 6736215656183159140, guid: 5c3f424e8617f9d4d81d6a052502be8b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6736215657624567021, guid: 5c3f424e8617f9d4d81d6a052502be8b, type: 3}
       propertyPath: m_RootOrder
@@ -6685,7 +6689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6736215656183159140, guid: e0869dc0e9b1eaf4bb1558378afe283c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6736215656522996377, guid: e0869dc0e9b1eaf4bb1558378afe283c, type: 3}
       propertyPath: m_IsActive

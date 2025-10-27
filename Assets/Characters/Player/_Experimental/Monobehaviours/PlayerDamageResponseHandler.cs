@@ -6,6 +6,7 @@ namespace Game.Player
     {
         [Header("Player Monobehaviours")]
         [SerializeField] private PlayerCheckpointRespawnHandler _checkpointRespawnHandler;
+        [SerializeField] private PlayerKnockbackHandler _knockbackHandler;
 
         [Header("Scriptable Object Resources")]
         [SerializeField] private ResourceSO _playerHealthResource;
@@ -21,7 +22,7 @@ namespace Game.Player
             // 2) take normal damage
             else
             {
-                ProcessNormalDamage();
+                ProcessNormalDamage(damageTakenData.TotalDamage, damageData);
             }
         }
 
@@ -34,9 +35,13 @@ namespace Game.Player
             else  _checkpointRespawnHandler.HandleDeathRespawning();
         }
 
-        private void ProcessNormalDamage()
+        private void ProcessNormalDamage(float damageTaken, Damage damageData)
         {
-            Logger.Log("normal damage.");
+            _playerHealthResource.Add(-damageTaken);
+            bool playerIsAlive = _playerHealthResource.Current > 0;
+
+            if (playerIsAlive) _knockbackHandler.HandleKnockbackOnTakeDamage(damageData);
+            else _checkpointRespawnHandler.HandleDeathRespawning();
         }
     }
 }

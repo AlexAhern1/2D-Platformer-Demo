@@ -324,6 +324,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
+      propertyPath: _damage.Attacker
+      value: 
+      objectReference: {fileID: 6736215656183159140}
+    - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
+      propertyPath: _damage.AttackSource
+      value: 
+      objectReference: {fileID: 6736215656183159140}
+    - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
       propertyPath: _damage.RawDamage.Array.data[0].IgnoreResistance
       value: 0
       objectReference: {fileID: 0}
@@ -665,7 +673,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4263160883018844073, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
   m_PrefabInstance: {fileID: 2199532496615349468}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6736215656183159140}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac719c4630c2bbe40bbf8f787c6059e8, type: 3}
@@ -698,7 +706,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6466083464146872037, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
   m_PrefabInstance: {fileID: 2199532496615349468}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6736215656183159140}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fa58190f695341429c99aae968a50d7, type: 3}
@@ -729,6 +737,11 @@ MonoBehaviour:
 --- !u!4 &6710788539496435752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4875091320397171956, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
+  m_PrefabInstance: {fileID: 2199532496615349468}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6736215656183159140 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4899238364895987128, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
   m_PrefabInstance: {fileID: 2199532496615349468}
   m_PrefabAsset: {fileID: 0}
 --- !u!50 &6736215657624567010 stripped
@@ -919,6 +932,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
+      propertyPath: _damage.Attacker
+      value: 
+      objectReference: {fileID: 6736215656183159140}
+    - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
+      propertyPath: _damage.AttackSource
+      value: 
+      objectReference: {fileID: 6736215656183159140}
+    - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
       propertyPath: _damage.RawDamage.Array.data[0].IgnoreResistance
       value: 0
       objectReference: {fileID: 0}
@@ -1052,6 +1073,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
+      propertyPath: _damage.Attacker
+      value: 
+      objectReference: {fileID: 6736215656183159140}
+    - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
+      propertyPath: _damage.AttackSource
+      value: 
+      objectReference: {fileID: 6736215656183159140}
+    - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
       propertyPath: _damage.RawDamage.Array.data[0].IgnoreResistance
       value: 0
       objectReference: {fileID: 0}
@@ -1184,6 +1213,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
+      propertyPath: _damage.Attacker
+      value: 
+      objectReference: {fileID: 6736215656183159140}
+    - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
+      propertyPath: _damage.AttackSource
+      value: 
+      objectReference: {fileID: 6736215656183159140}
     - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
       propertyPath: _damage.RawDamage.Array.data[0].IgnoreResistance
       value: 0
@@ -1321,6 +1358,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
+      propertyPath: _damage.Attacker
+      value: 
+      objectReference: {fileID: 6736215656183159140}
+    - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
+      propertyPath: _damage.AttackSource
+      value: 
+      objectReference: {fileID: 6736215656183159140}
     - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
       propertyPath: _damage.RawDamage.Array.data[0].IgnoreResistance
       value: 0
