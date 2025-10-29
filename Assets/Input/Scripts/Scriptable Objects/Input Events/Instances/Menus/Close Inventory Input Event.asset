@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7d5b93d5e649db9418617ea5ec0bceaf, type: 3}
-  m_Name: Close Input Event
+  m_Name: Close Inventory Input Event
   m_EditorClassIdentifier: 

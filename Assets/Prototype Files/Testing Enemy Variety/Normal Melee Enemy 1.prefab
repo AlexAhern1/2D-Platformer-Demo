@@ -1222,6 +1222,34 @@ PrefabInstance:
       propertyPath: _states.Array.data[13]
       value: 
       objectReference: {fileID: 79036466073859411}
+    - target: {fileID: 4138080518407204271, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[-2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138080518407204271, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: _behaviours.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138080518407204271, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: _behaviours.Array.data[1]
+      value: 3310820388028022784
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138080518407204271, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: _behaviours.Array.data[2]
+      value: 983465096393261075
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138080518407204271, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820388028022784]
+      value: Assembly-CSharp Game.SpawnItemsBehaviour
+      objectReference: {fileID: 0}
+    - target: {fileID: 4138080518407204271, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820388028022784].Spawner
+      value: 
+      objectReference: {fileID: 4467062689638610980}
+    - target: {fileID: 4138080518407204271, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[3310820388028022784].SpawnAfterSeconds
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4297681893987471235, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
       propertyPath: managedReferences[-2]
       value: 
@@ -1550,6 +1578,26 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6325425275005380357, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: _itemName
+      value: Damaged Processor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325425275005380357, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: _spawnpoint
+      value: 
+      objectReference: {fileID: 8881891415139268698}
+    - target: {fileID: 6325425275005380357, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: _spawnables.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325425275005380357, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: _spawnables.Array.data[0].Amount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325425275005380357, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: _spawnables.Array.data[0].Spawnable
+      value: 
+      objectReference: {fileID: 8809397759900302475, guid: eda9e63ae3e42fa4dacc8fd7bddf1a3f, type: 3}
     - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
       propertyPath: managedReferences[3310820343833427970]
       value: Assembly-CSharp Game.ParticleFX
@@ -2092,6 +2140,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa58190f695341429c99aae968a50d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4467062689638610980 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6325425275005380357, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+  m_PrefabInstance: {fileID: 7653407006311997217}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c07d2eca938cb15498e6a814a78a7a4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5379154169617411669 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2346592184883294580, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
@@ -2158,3 +2217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab84faffdc8942b4e983c65d32155bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &8881891415139268698 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1257784335344461691, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+  m_PrefabInstance: {fileID: 7653407006311997217}
+  m_PrefabAsset: {fileID: 0}

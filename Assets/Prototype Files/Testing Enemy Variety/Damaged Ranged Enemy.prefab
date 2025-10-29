@@ -1018,6 +1018,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8018868
       objectReference: {fileID: 0}
+    - target: {fileID: 6325425275005380357, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
+      propertyPath: _spawnables.Array.data[0].Amount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325425275005380357, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
+      propertyPath: _spawnables.Array.data[0].Spawnable
+      value: 
+      objectReference: {fileID: 8809397759900302475, guid: eda9e63ae3e42fa4dacc8fd7bddf1a3f, type: 3}
     - target: {fileID: 8192240063157363813, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
       propertyPath: m_Color.b
       value: 0.8018868

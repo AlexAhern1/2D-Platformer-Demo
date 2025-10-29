@@ -46,7 +46,6 @@ namespace Game
 
         private void OnTransitionRequestReceived(SceneTransitionRequest request)
         {
-            Logger.Log("request received");
             var context = request.Context;
 
             // need to check: if the request is to load the same central scene as the current one (which implies also the same adjacnet ones),

@@ -43,5 +43,9 @@ namespace Game
         {
             _inventory.Add(data);
         }
+
+        // demo collectables: (shards, bonuses, enemy drops, key).
+
+        // need to display them when opening the inventory.
     }
 }

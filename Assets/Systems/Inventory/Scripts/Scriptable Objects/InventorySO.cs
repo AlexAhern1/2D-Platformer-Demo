@@ -11,6 +11,8 @@ namespace Game
 
         private readonly Dictionary<string, int> _contents = new();
 
+        public Dictionary<string, int> contents => _contents;
+
         private void OnEnable()
         {
             if (_resetOnRecompile) Clear();

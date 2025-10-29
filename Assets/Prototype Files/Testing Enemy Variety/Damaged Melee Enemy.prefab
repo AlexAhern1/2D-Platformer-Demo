@@ -568,6 +568,14 @@ PrefabInstance:
       propertyPath: Cooldowns.Array.data[0].Duration
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6325425275005380357, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
+      propertyPath: _spawnables.Array.data[0].Amount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6325425275005380357, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
+      propertyPath: _spawnables.Array.data[0].Spawnable
+      value: 
+      objectReference: {fileID: 8809397759900302475, guid: eda9e63ae3e42fa4dacc8fd7bddf1a3f, type: 3}
     - target: {fileID: 8711623969546825132, guid: 0becbe0172ee6614fa2b97a9e7926e48, type: 3}
       propertyPath: Conditions.Array.size
       value: 1
