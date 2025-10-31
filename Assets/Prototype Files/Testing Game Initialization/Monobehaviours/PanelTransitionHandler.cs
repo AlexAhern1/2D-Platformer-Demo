@@ -47,6 +47,8 @@ namespace Game.UI
             canvas.alpha = 0;
             canvas.gameObject.SetActive(false);
 
+            mode.FadeOutCompleteEvent.Invoke();
+
             // wait for delay
             yield return new WaitForSeconds(mode.FadeInDelay);
 
@@ -99,6 +101,7 @@ namespace Game.UI
         public UIControlScheme ControlScheme;
 
         [Header("Events")]
+        public UnityEvent FadeOutCompleteEvent;
         public UnityEvent TransitionCompleteEvent;
     }
 }

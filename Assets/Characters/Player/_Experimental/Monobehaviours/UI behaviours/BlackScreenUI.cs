@@ -63,6 +63,7 @@ namespace Game
         {
             var col = _blackScreen.color;
             col.a = alpha;
+            _alpha = alpha;
             _blackScreen.color = col;
         }
 

@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 namespace Game
 {
-    public class SceneLoader : MonoBehaviour
+    public class SceneLoader : MonoBehaviour, IEnable, IInitializable
     {
         // this class should only be in the persistent scene.
 
@@ -14,26 +14,38 @@ namespace Game
         [SerializeField] private SceneField _currentCentralScene;
         [SerializeField] private SceneField[] _currentAdjacentScenes;
 
-        [Header("Editor Config")]
-        [SerializeField] private bool _ignore;
+        [SerializeField] private bool _initializeOnAwake;
 
         private void Awake()
         {
-            if (_ignore) return;
+            if (_initializeOnAwake) LoadInitialScenes();
+        }
+
+        public void Initialize()
+        {
+            Logger.Log("SCENE MANAGER INITIALIZED", MoreColors.Emerald);
             LoadInitialScenes();
         }
 
-        private void OnEnable()
+        public void SetInitialScenes(SceneField center, SceneField[] adjacents)
         {
+            _currentCentralScene = center;
+            _currentAdjacentScenes = adjacents;
+        }
+
+        public void Enable()
+        {
+            Logger.Log("SCENE MANAGER ENABLED", MoreColors.LimeGreen);
             _requestEvent.AddEvent(OnTransitionRequestReceived);
         }
 
-        private void OnDisable()
+        public void Disable()
         {
+            Logger.Log("SCENE MANAGER DISABLED", MoreColors.PaleTurquoise);
             _requestEvent.RemoveEvent(OnTransitionRequestReceived);
         }
 
-        private void LoadInitialScenes()
+        public void LoadInitialScenes()
         {
             // loading central scene
             LoadSceneIfUnloaded(_currentCentralScene);

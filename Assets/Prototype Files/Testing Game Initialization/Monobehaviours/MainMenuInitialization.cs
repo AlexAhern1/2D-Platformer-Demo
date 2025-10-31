@@ -24,8 +24,11 @@ namespace Game.UI
         [Header("Overall canvas groups")]
         [SerializeField] private CanvasGroup _gameTitleCanvasGroup;
         [SerializeField] private CanvasGroup _mainMenuCanvasGroup;
-        
-        // other canvas groups: // spawnpoint selection, controls display, quit buttons
+        [SerializeField] private CanvasGroup _spawnLocationCanvasGroup;
+        [SerializeField] private CanvasGroup _controlsCanvasGroup;
+        [SerializeField] private CanvasGroup _quitGameCanvasGroup;
+
+        // other canvas groups: // spawnpoint selection
 
         // state variables
         private bool _canPressAnyButton;
@@ -37,6 +40,15 @@ namespace Game.UI
 
             _mainMenuCanvasGroup.alpha = 0;
             _mainMenuCanvasGroup.gameObject.SetActive(false);
+
+            _spawnLocationCanvasGroup.alpha = 0;
+            _spawnLocationCanvasGroup.gameObject.SetActive(false);
+
+            _controlsCanvasGroup.alpha = 0;
+            _controlsCanvasGroup.gameObject.SetActive(false);
+
+            _quitGameCanvasGroup.alpha = 0;
+            _quitGameCanvasGroup.gameObject.SetActive(false);
 
             _titleCanvasGroup.alpha = 0;
             _startButtonCanvasGroup.alpha = 0;

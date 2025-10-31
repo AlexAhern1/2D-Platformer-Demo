@@ -17,6 +17,9 @@ namespace Game.UI
         [SerializeField] private UIObject _currentObject;
         [SerializeField] private bool _initializeOnAwake;
 
+        [Header("Default config")]
+        [SerializeField] private UIObject _defaultObject;
+
         [Header("Math config")]
         [SerializeField] private float _angleTolerance;
 
@@ -74,6 +77,15 @@ namespace Game.UI
         public void SelectCurrentObject()
         {
             _currentObject.Select();
+        }
+
+        public void InitializeDefaultObject()
+        {
+            if (_defaultObject == null) return;
+
+            _currentObject.Exit();
+            _currentObject = _defaultObject;
+            _currentObject.Initialize();
         }
     }
 }

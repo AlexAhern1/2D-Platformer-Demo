@@ -184,6 +184,7 @@ namespace Game.Player
         }
 
         // waiting method - to be moved into static async helpers
+        [System.Obsolete("Use AsyncHelpers static method.")]
         private async Task Wait(float seconds)
         {
             float elapsedTime = 0f;

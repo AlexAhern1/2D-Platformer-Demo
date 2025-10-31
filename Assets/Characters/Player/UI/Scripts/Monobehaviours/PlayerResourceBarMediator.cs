@@ -14,6 +14,7 @@ namespace Game.Player
 
         public void Enable()
         {
+            Logger.Log("RESOURCE BARS ENABLED", MoreColors.LimeGreen);
             _playerHealthBarUI.SetMinAndMaxValues(0, _maxAmountStat.Value);
             _playerHealthBarUI.SetCurrentValue(_currentAmount.Value);
 
@@ -25,6 +26,7 @@ namespace Game.Player
 
         public void Disable()
         {
+            Logger.Log("RESOURCE BARD DISABLED", MoreColors.PaleTurquoise);
             _currentAmount.RemoveEvent(OnCurrentHealthChanged);
             _maxAmountStat.RemoveOnChangeEvent(OnMaxHealthChanged);
 

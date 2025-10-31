@@ -14,12 +14,16 @@ namespace Game.Player
         [SerializeField]
         private InterfaceReference<MonoBehaviour, IEnable>[] _enables;
 
+        [SerializeField] private bool _setActiveOnInitialize;
+
         public void Initialize()
         {
             for (int i = 0; i < _initalizables.Length; i++)
             {
                 _initalizables[i].Interface.Initialize();
             }
+
+            if (_setActiveOnInitialize) gameObject.SetActive(true);
         }
 
         public void Enable()
