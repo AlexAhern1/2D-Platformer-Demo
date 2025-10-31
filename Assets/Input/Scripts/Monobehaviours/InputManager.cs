@@ -16,11 +16,13 @@ namespace Game.Input
         [Separator]
         [SerializeField] private string _levelMapName;
         [SerializeField] private string _menusMapName;
+        [SerializeField] private string _titleMapName;
 
-        [Header("Action map swapping events")]
+        [Header("Input map swapping events")]
         [SerializeField] private GameEvent _disableCurrentMapEvent;
         [SerializeField] private GameEvent _enableLevelMapEvent;
         [SerializeField] private GameEvent _enableMenusMapEvent;
+        [SerializeField] private GameEvent _enableTitleMapEvent;
 
         private Dictionary<string, InputActionMap> _actionMaps;
 
@@ -33,7 +35,6 @@ namespace Game.Input
 
         public void Initialize()
         {
-            if (!_enableDefaultInputs) return;
             var maps = _inputSystemDistributor.InputSystem.asset.actionMaps;
             _actionMaps = new(maps.Count);
 
@@ -42,7 +43,7 @@ namespace Game.Input
                 var map = maps[i];
                 _actionMaps[map.name] = map;
 
-                if (_defaultMap == map.name)
+                if (_defaultMap == map.name && _enableDefaultInputs)
                 {
                     _currentMap = map.name;
                     map.Enable();
@@ -57,6 +58,7 @@ namespace Game.Input
             _disableCurrentMapEvent.AddEvent(OnDisableCurrentMap);
             _enableLevelMapEvent.AddEvent(EnableLevelMap);
             _enableMenusMapEvent.AddEvent(EnableMenusMap);
+            _enableTitleMapEvent.AddEvent(EnableTitleMap);
         }
 
         public void Disable()
@@ -66,6 +68,7 @@ namespace Game.Input
             _disableCurrentMapEvent.RemoveEvent(OnDisableCurrentMap);
             _enableLevelMapEvent.RemoveEvent(EnableLevelMap);
             _enableMenusMapEvent.RemoveEvent(EnableMenusMap);
+            _enableTitleMapEvent.RemoveEvent(EnableTitleMap);
         }
 
         private void EnableLevelMap()
@@ -80,6 +83,13 @@ namespace Game.Input
             if (!_currentMap.Equals("")) _actionMaps[_currentMap].Disable();
             else if (_currentMap.Equals(_menusMapName)) return;
             EnableMap(_menusMapName);
+        }
+
+        private void EnableTitleMap()
+        {
+            if (!_currentMap.Equals("")) _actionMaps[_currentMap].Disable();
+            else if (_currentMap.Equals(_titleMapName)) return;
+            EnableMap(_titleMapName);
         }
 
         private void OnDisableCurrentMap()

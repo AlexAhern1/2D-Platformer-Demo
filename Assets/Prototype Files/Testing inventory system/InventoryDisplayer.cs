@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 namespace Game.UI
@@ -31,9 +30,6 @@ namespace Game.UI
             {
                 var text = panel.NameText;
                 _panelDictionary[text.text] = panel;
-
-                Logger.Log(text.text);
-
                 panel.SetAmount(0); //once saving and loading gets implemented, this must be modified.
             }
         }

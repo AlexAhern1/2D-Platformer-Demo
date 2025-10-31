@@ -46,6 +46,8 @@ namespace Game
         [SerializeReference, SubclassSelector]
         public IQuaternionProvider Rotation;
 
+        public Vector2 Scale = new(1, 1);
+
         public override void Play()
         {
             ParticleSystem particles;
@@ -56,6 +58,7 @@ namespace Game
                 
                 var transform = particles.transform;
                 transform.SetLocalPositionAndRotation(Spawnpoint.Get(), Rotation.Get());
+                transform.localScale = Scale;
             }
             else
             {

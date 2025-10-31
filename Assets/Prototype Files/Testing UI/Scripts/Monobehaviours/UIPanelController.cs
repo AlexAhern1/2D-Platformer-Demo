@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Game.UI
 {
-    public class UIPanelController : MonoBehaviour
+    public class UIPanelController : MonoBehaviour, IEnable
     {
         [Header("Input events")]
         [SerializeField] private Vector2InputEvent _navigateInputEvent;
@@ -21,7 +21,7 @@ namespace Game.UI
         [Header("Control scheme event")]
         [SerializeField] private UIControlSchemeEvent _controlSchemeEvent;
 
-        private void OnEnable()
+        public void Enable()
         {
             _controlSchemeEvent.AddEvent(OnUpdateControlScheme);
 
@@ -30,7 +30,7 @@ namespace Game.UI
             _backInputEvent.AddEvent(OnPressBack);
         }
 
-        private void OnDisable()
+        public void Disable()
         {
             _controlSchemeEvent.RemoveEvent(OnUpdateControlScheme);
 

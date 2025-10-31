@@ -38,12 +38,16 @@ namespace Game
         [SerializeField] private InputEvent<float> _backInputEvent;
         [SerializeField] private InputEvent<float> _closeInputEvent;
 
+        [Header("Title")]
+        [SerializeField] private InputEvent<float> _anyInputEvent;
+
         public void Activate()
         {
             var system = _inputDistributor.InputSystem;
 
             var level = system.Level;
             var menus = system.Menus;
+            var title = system.Title;
 
             Bind(level.Move, OnPressMove);
             Bind(level.Cycle, OnPressCycle);
@@ -63,6 +67,8 @@ namespace Game
             Bind(menus.Select, OnPressSelect);
             Bind(menus.Back, OnPressBack);
             Bind(menus.Close, OnPressClose);
+
+            Bind(title.Any, OnPressAny);
         }
 
         public void Deactivate()
@@ -71,6 +77,7 @@ namespace Game
 
             var level = system.Level;
             var menus = system.Menus;
+            var title = system.Title;
 
             Unbind(level.Move, OnPressMove);
             Unbind(level.Cycle, OnPressCycle);
@@ -90,6 +97,8 @@ namespace Game
             Unbind(menus.Select, OnPressSelect);
             Unbind(menus.Back, OnPressBack);
             Unbind(menus.Close, OnPressClose);
+
+            Unbind(title.Any, OnPressAny);
         }
 
         private void Bind(InputAction inputEvent, Action<InputAction.CallbackContext> inputCallback)
@@ -143,6 +152,12 @@ namespace Game
         private void OnPressBack(InputAction.CallbackContext context) => Process(context.ReadValue<float>(), _backInputEvent);
 
         private void OnPressClose(InputAction.CallbackContext context) => Process(context.ReadValue<float>(), _closeInputEvent);
+
+        #endregion
+
+        #region Title
+
+        private void OnPressAny(InputAction.CallbackContext context) => Process(context.ReadValue<float>(), _anyInputEvent);
 
         #endregion
 

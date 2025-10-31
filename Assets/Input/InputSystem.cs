@@ -924,6 +924,144 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""Title"",
+            ""id"": ""243f3d48-c4e3-4cc6-ae9b-15459e073685"",
+            ""actions"": [
+                {
+                    ""name"": ""Any"",
+                    ""type"": ""Button"",
+                    ""id"": ""2ecbc218-e823-455f-9d9a-5668bed2fd1b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""233c470c-baa3-4488-a546-cab4c5f0f09c"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller Scheme"",
+                    ""action"": ""Any"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2d7144ab-fb32-441b-9edd-8957a422b1a5"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Scheme"",
+                    ""action"": ""Any"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""990a7385-f03f-4bf1-b3ef-d5f20711bcc4"",
+                    ""path"": ""<Mouse>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Scheme"",
+                    ""action"": ""Any"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f1fb4fed-547f-47c2-947b-f53874e897bd"",
+                    ""path"": ""<Keyboard>/anyKey"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Scheme"",
+                    ""action"": ""Any"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ccf8003b-32ec-4845-87ba-04c40fdb8b28"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller Scheme"",
+                    ""action"": ""Any"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""898bc132-4908-4603-afc3-67a1921cec0c"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller Scheme"",
+                    ""action"": ""Any"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08e465d1-ebcf-4630-aba8-a94afb235934"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller Scheme"",
+                    ""action"": ""Any"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9add8221-b1df-4283-9bfe-e3f6aa348c17"",
+                    ""path"": ""<Gamepad>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller Scheme"",
+                    ""action"": ""Any"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76334fff-e0be-49eb-82e0-a2d85875575a"",
+                    ""path"": ""<Gamepad>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller Scheme"",
+                    ""action"": ""Any"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d967671f-a0e6-4e4d-b35a-48a5d92e92c8"",
+                    ""path"": ""<Gamepad>/dpad/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller Scheme"",
+                    ""action"": ""Any"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""647b96d9-4321-4909-bb85-7dbe3abc8109"",
+                    ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Controller Scheme"",
+                    ""action"": ""Any"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -979,6 +1117,9 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
         m_Menus_Select = m_Menus.FindAction("Select", throwIfNotFound: true);
         m_Menus_Back = m_Menus.FindAction("Back", throwIfNotFound: true);
         m_Menus_Close = m_Menus.FindAction("Close", throwIfNotFound: true);
+        // Title
+        m_Title = asset.FindActionMap("Title", throwIfNotFound: true);
+        m_Title_Any = m_Title.FindAction("Any", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1236,6 +1377,39 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
         }
     }
     public MenusActions @Menus => new MenusActions(this);
+
+    // Title
+    private readonly InputActionMap m_Title;
+    private ITitleActions m_TitleActionsCallbackInterface;
+    private readonly InputAction m_Title_Any;
+    public struct TitleActions
+    {
+        private @InputSystem m_Wrapper;
+        public TitleActions(@InputSystem wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Any => m_Wrapper.m_Title_Any;
+        public InputActionMap Get() { return m_Wrapper.m_Title; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(TitleActions set) { return set.Get(); }
+        public void SetCallbacks(ITitleActions instance)
+        {
+            if (m_Wrapper.m_TitleActionsCallbackInterface != null)
+            {
+                @Any.started -= m_Wrapper.m_TitleActionsCallbackInterface.OnAny;
+                @Any.performed -= m_Wrapper.m_TitleActionsCallbackInterface.OnAny;
+                @Any.canceled -= m_Wrapper.m_TitleActionsCallbackInterface.OnAny;
+            }
+            m_Wrapper.m_TitleActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @Any.started += instance.OnAny;
+                @Any.performed += instance.OnAny;
+                @Any.canceled += instance.OnAny;
+            }
+        }
+    }
+    public TitleActions @Title => new TitleActions(this);
     private int m_KeyboardSchemeSchemeIndex = -1;
     public InputControlScheme KeyboardSchemeScheme
     {
@@ -1278,5 +1452,9 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
         void OnSelect(InputAction.CallbackContext context);
         void OnBack(InputAction.CallbackContext context);
         void OnClose(InputAction.CallbackContext context);
+    }
+    public interface ITitleActions
+    {
+        void OnAny(InputAction.CallbackContext context);
     }
 }
