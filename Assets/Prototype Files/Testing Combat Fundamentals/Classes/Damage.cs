@@ -19,6 +19,16 @@ namespace Game
         public GameObject AttackSource;
         public GameObject Attacker;
 
+        public float TotalDamage()
+        {
+            float dmg = 0;
+            for (int i = 0; i < RawDamage.Length; i++)
+            {
+                dmg += RawDamage[i].DamageType.Amount;
+            }
+            return dmg;
+        }
+
         public static float GetDamageDealt(float amount, float ignoreResist, float resist)
         {
             resist = Mathf.Max(0.01f, resist); //ensures no division by 0.
