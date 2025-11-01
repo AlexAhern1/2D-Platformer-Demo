@@ -28,6 +28,9 @@ namespace Game.UI
         [SerializeField] private CanvasGroup _controlsCanvasGroup;
         [SerializeField] private CanvasGroup _quitGameCanvasGroup;
 
+        [Header("Black screen")]
+        [SerializeField] private GameObject _blackScreenBackground;
+
         // other canvas groups: // spawnpoint selection
 
         // state variables
@@ -35,6 +38,8 @@ namespace Game.UI
 
         public void Initialize()
         {
+            _blackScreenBackground.SetActive(true);
+
             _gameTitleCanvasGroup.alpha = 1;
             _gameTitleCanvasGroup.gameObject.SetActive(true);
 

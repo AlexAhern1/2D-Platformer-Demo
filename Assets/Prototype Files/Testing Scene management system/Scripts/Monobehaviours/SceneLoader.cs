@@ -24,6 +24,14 @@ namespace Game
         public void Initialize()
         {
             Logger.Log("SCENE MANAGER INITIALIZED", MoreColors.Emerald);
+
+
+            if (_currentCentralScene.SceneName.Equals(""))
+            {
+                Logger.Log("No central scene to load!");
+                return;
+            }
+
             LoadInitialScenes();
         }
 
@@ -53,6 +61,16 @@ namespace Game
             for (int i = 0;  i < _currentAdjacentScenes.Length; i++)
             {
                 LoadSceneIfUnloaded(_currentAdjacentScenes[i]);
+            }
+        }
+
+        public void UnloadAllScenes()
+        {
+            Logger.Log("Unloading all scenes.");
+            SceneManager.UnloadSceneAsync(_currentCentralScene.SceneName);
+            foreach (var adj in _currentAdjacentScenes)
+            {
+                SceneManager.UnloadSceneAsync(adj.SceneName);
             }
         }
 

@@ -31,7 +31,7 @@ namespace Game.Input
         [SerializeField] private bool _enableDefaultInputs;
 
         // current map
-        private string _currentMap;
+        [SerializeField][ReadOnly] private string _currentMap;
 
         public void Initialize()
         {

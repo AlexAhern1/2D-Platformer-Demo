@@ -14,5 +14,15 @@ namespace Game
                 elapsedTime += Time.deltaTime;
             }
         }
+
+        public static async Task WaitUnscaled(float seconds)
+        {
+            float elapsedTime = 0f;
+            while (elapsedTime < seconds)
+            {
+                await Task.Yield();
+                elapsedTime += Time.unscaledDeltaTime;
+            }
+        }
     }
 }
