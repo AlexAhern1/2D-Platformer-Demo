@@ -26,6 +26,7 @@ namespace Game.UI
 
         public void Initialize()
         {
+            _inventory.Clear();
             foreach (var panel in _collectorpanel.GetComponentsInChildren<InventoryPanel>())
             {
                 var text = panel.NameText;

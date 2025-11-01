@@ -9,12 +9,12 @@ namespace Game
     }
 
     [System.Serializable]
-    public class AllConditionsArray : ICondition
+    public class AllConditionsArray : AttackCondition
     {
         [SerializeReference, SubclassSelector]
         public ICondition[] Conditions;
 
-        public bool Evaluate()
+        public override bool Evaluate()
         {
             for (int i = 0; i < Conditions.Length; i++)
             {
@@ -25,12 +25,12 @@ namespace Game
     }
 
     [System.Serializable]
-    public class AnyConditionsArray : ICondition
+    public class AnyConditionsArray : AttackCondition
     {
         [SerializeReference, SubclassSelector]
         public ICondition[] Conditions;
 
-        public bool Evaluate()
+        public override bool Evaluate()
         {
             for (int i = 0; i < Conditions.Length; i++)
             {

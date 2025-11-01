@@ -19,7 +19,6 @@ namespace Game
 
         public void Spawn()
         {
-            Logger.Log("spawn");
             for (int i = 0; i < _spawnables.Length; i++)
             {
                 for (int _ = 0; _ < _spawnables[i].Amount; _++)

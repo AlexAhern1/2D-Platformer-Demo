@@ -18,6 +18,9 @@ namespace Game
         [SerializeField] private float _levelFadeInDuration;
         [SerializeField] private GameEvent _enableLevelsInputEvent;
         [SerializeField] private GameObject[] _HUDelements;
+        [SerializeField] private ResourceSO _playerHealth;
+        [SerializeField] private ResourceSO _playerStatic;
+
 
         [Header("Starting locations")]
         [SerializeField] private StartingLocationConfig[] Locations;
@@ -31,6 +34,10 @@ namespace Game
 
         public async void LoadStartingLocation(int ID)
         {
+            // set player resources to max
+            _playerHealth.Set(_playerHealth.Max);
+            _playerStatic.Set(_playerStatic.Max);
+
             // disable input
             _disableInputEvent.Raise();
 
