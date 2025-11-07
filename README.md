@@ -1,1 +1,5 @@
-This is a (currently incomplete) demo of a game I've been working on over the past few years (over several prototypes) as a way to teach myself C# programming and how to use Unity.
+This project is a demo of my own 2d platformer game.
+
+There have been several prototpyes of this project over the past 4 years, all of which helped me to learn C#, Unity and Software design principles and best practices.
+
+A release of a build will be available soon.
