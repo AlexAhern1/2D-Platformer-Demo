@@ -40,7 +40,7 @@ namespace Game.UI
 
             while (elapsedTime < duration)
             {
-                elapsedTime += Time.deltaTime;
+                elapsedTime += Time.unscaledDeltaTime;
                 canvas.alpha = Mathf.Lerp(1, 0, elapsedTime * durationReciprocal);
                 yield return null;
             }
@@ -62,7 +62,7 @@ namespace Game.UI
             // fade in
             while (elapsedTime < duration)
             {
-                elapsedTime += Time.deltaTime;
+                elapsedTime += Time.unscaledDeltaTime;
                 canvas.alpha = Mathf.Lerp(0, 1, elapsedTime * durationReciprocal);
                 yield return null;
             }

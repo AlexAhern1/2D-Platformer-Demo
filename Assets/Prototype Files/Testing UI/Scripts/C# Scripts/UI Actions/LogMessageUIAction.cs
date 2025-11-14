@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Game.UI
 {
@@ -6,10 +7,11 @@ namespace Game.UI
     public class LogMessageUIAction : UIAction
     {
         public string Message;
+        public Color MessageColor = Color.white;
 
         public override void DoAction()
         {
-            Logger.Log(Message);
+            Logger.Log(Message, MessageColor);
         }
     }
 }

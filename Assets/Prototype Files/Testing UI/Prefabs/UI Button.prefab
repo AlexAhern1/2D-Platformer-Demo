@@ -111,18 +111,21 @@ MonoBehaviour:
         Images:
         - {fileID: 8816488408787289439}
         Col: {r: 0.5019608, g: 1, b: 1, a: 1}
+        DoThing: 0
     - rid: 3310820432055894019
       type: {class: UIImageColorAction, ns: Game.UI, asm: Assembly-CSharp}
       data:
         Images:
         - {fileID: 8816488408787289439}
         Col: {r: 0.5019608, g: 1, b: 1, a: 1}
+        DoThing: 0
     - rid: 3310820432055894020
       type: {class: UIImageColorAction, ns: Game.UI, asm: Assembly-CSharp}
       data:
         Images:
         - {fileID: 8816488408787289439}
         Col: {r: 1, g: 1, b: 1, a: 1}
+        DoThing: 0
     - rid: 8946763729350426628
       type: {class: UIAnimationAction, ns: Game.UI, asm: Assembly-CSharp}
       data:

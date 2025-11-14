@@ -1975,6 +1975,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523784].DoThing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: managedReferences[8946763737400868880].Value.x
       value: 570
       objectReference: {fileID: 0}
@@ -2636,6 +2640,10 @@ PrefabInstance:
       value: init resume
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523783].DoThing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: managedReferences[8946763737400868880].Value.x
       value: 570
       objectReference: {fileID: 0}
@@ -2670,6 +2678,54 @@ PrefabInstance:
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: managedReferences[3310820438425206805].TransitionID
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523778].MessageColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523778].MessageColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523778].MessageColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523778].MessageColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523779].MessageColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523779].MessageColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523779].MessageColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523779].MessageColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523780].MessageColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523780].MessageColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523780].MessageColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820448712523780].MessageColor.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: managedReferences[3310820438425206805].TransitionHandler
@@ -3702,16 +3758,88 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: _exitActions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: _enterActions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: _selectActions.Array.size
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: _exitActions.Array.data[1]
+      value: 5738116220534390787
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: _enterActions.Array.data[2]
+      value: 5738116220534390786
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: _selectActions.Array.data[5]
       value: 3310820438425206805
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: _initializeActions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: _initializeActions.Array.data[1]
+      value: 5738116220534390789
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: managedReferences[3310820438425206805]
       value: Assembly-CSharp Game.UI.UITransitionEventAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390786]
+      value: Assembly-CSharp Game.UI.LogMessageUIAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390787]
+      value: Assembly-CSharp Game.UI.LogMessageUIAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390788]
+      value: Assembly-CSharp Game.UI.PlayFXAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390789]
+      value: Assembly-CSharp Game.UI.LogMessageUIAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820432055894020].Col.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820432055894020].Col.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820432055894020].Col.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390788].Effect
+      value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820432055894020].DoThing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390786].Message
+      value: enter play
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390787].Message
+      value: exit play
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390789].Message
+      value: Init play
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: managedReferences[8946763737400868880].Value.x
@@ -3731,6 +3859,54 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: managedReferences[3310820438425206805].TransitionID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390786].MessageColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390786].MessageColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390786].MessageColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390786].MessageColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390787].MessageColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390787].MessageColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390787].MessageColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390787].MessageColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390789].MessageColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390789].MessageColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390789].MessageColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390789].MessageColor.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
@@ -3873,7 +4049,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &444661905
 Transform:
   m_ObjectHideFlags: 0
@@ -4310,11 +4486,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3649443669883861934, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.391714
+      value: 193.0551
       objectReference: {fileID: 0}
     - target: {fileID: 3649443669883861934, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2157829
+      value: -35.90705
       objectReference: {fileID: 0}
     - target: {fileID: 3649443669883861934, guid: 484f7e89f0a64a044b4dce7d830ad775, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4502,7 +4678,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &527602941
 Transform:
   m_ObjectHideFlags: 0
@@ -7223,7 +7399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1106689401
 Transform:
   m_ObjectHideFlags: 0
@@ -10945,12 +11121,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: _enterActions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: _selectActions.Array.size
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: _enterActions.Array.data[2]
+      value: 5738116220534390785
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: _selectActions.Array.data[5]
       value: 3310820441587187712
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: _initializeActions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: _initializeActions.Array.data[1]
+      value: 5738116220534390784
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: managedReferences[3310820438425206789]
@@ -10959,6 +11151,30 @@ PrefabInstance:
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: managedReferences[3310820441587187712]
       value: Assembly-CSharp Game.UI.UITransitionEventAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390784]
+      value: Assembly-CSharp Game.UI.LogMessageUIAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390785]
+      value: Assembly-CSharp Game.UI.LogMessageUIAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820432055894018].DoThing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[3310820432055894020].DoThing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390784].Message
+      value: INIT
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390785].Message
+      value: ENTER
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: managedReferences[8946763737400868880].Value.x
@@ -10983,6 +11199,38 @@ PrefabInstance:
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: managedReferences[3310820441587187712].TransitionID
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390784].MessageColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390784].MessageColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390784].MessageColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390784].MessageColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390785].MessageColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390785].MessageColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390785].MessageColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: managedReferences[5738116220534390785].MessageColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 226972573271532081, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: managedReferences[3310820438425206789].TransitionHandler
@@ -11018,6 +11266,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8816488408787289439, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
       propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8816488408787289439, guid: 041635138ccc86248aada1f3f0a4f001, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

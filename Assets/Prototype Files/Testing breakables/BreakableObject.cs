@@ -10,6 +10,7 @@ namespace Game
         //  potentially - calculate based on total damage from Damage struct input data
 
         [SerializeField] private int _hitsToBreak;
+        [SerializeField] private Tag _playerTag;
 
         // state variables
         private int _hitCount;
@@ -20,6 +21,8 @@ namespace Game
 
         public override void TakeDamage(Damage dmg)
         {
+            if (dmg.Attacker.tag != _playerTag) return;
+
             _hitCount++;
             if (_hitCount < _hitsToBreak)
             {

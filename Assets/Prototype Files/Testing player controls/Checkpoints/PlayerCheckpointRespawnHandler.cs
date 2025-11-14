@@ -68,23 +68,23 @@ namespace Game.Player
             _animator.Play(_takeLethalDamageAnimation.name);
             _fxPlayer.Play(_lethalDamageFXID);
 
-            await Wait(0.01f);
+            await AsyncHelpers.Wait(0.01f);
 
             _physics.SetGravityScale(0);
             _physics.SetMaxFallSpeed(0);
             _physics.Move(Vector2.zero, true);
 
 
-            await Wait(_delayBeforeDeathBlackScreen);
+            await AsyncHelpers.Wait(_delayBeforeDeathBlackScreen);
 
             _animator.Play(_playerDisappearAnimation.name);
             _fxPlayer.Play(_deathDespawnFXID);
 
-            await Wait(_delayForDeathParticles);
+            await AsyncHelpers.Wait(_delayForDeathParticles);
 
             _fadeInEvent.Raise(_fadeInTime);
 
-            await Wait(_fadeInTime);
+            await AsyncHelpers.Wait(_fadeInTime);
 
             _playerDeathEvent.Raise();
             _playerTransform.position = _restpointReference.Value;
@@ -93,7 +93,7 @@ namespace Game.Player
             _useDefaultCameraEvent.Raise();
 
             // 8.5 let the black screen linger for a short while
-            await Wait(_lingerTime);
+            await AsyncHelpers.Wait(_lingerTime);
 
             // 9 play respawning animation (field: player animation clip + animation handler, similar to 3)
             _animator.Play(_playerReappearAnimation.name);
@@ -105,7 +105,7 @@ namespace Game.Player
             _fadeOutEvent.Raise(_fadeOutTime);
 
             // 11 wait for black screen to fade out completely
-            await Wait(_fadeOutTime);
+            await AsyncHelpers.Wait(_fadeOutTime);
 
             // 12 remove player invulnerability (similar to 2)
 
@@ -133,7 +133,7 @@ namespace Game.Player
             // -1 play FX (done here in case additional fx needs to be played AFTER respawning. this is an async method so it is a perfect place to set it up here.
             _fxPlayer.Play(_nonLethalDamageFXID);
 
-            await Wait(0.01f);
+            await AsyncHelpers.Wait(0.01f);
 
             // 0 set gravity scale, fall speed and velocity directions to 0
             _physics.SetGravityScale(0);
@@ -144,13 +144,13 @@ namespace Game.Player
             // 4 play damage animation (field: animtion clip + animation handler)
 
             // 4.5 wait for a tiny delay before fading in the black screen
-            await Wait(_delayBeforeStarting);
+            await AsyncHelpers.Wait(_delayBeforeStarting);
 
             // 5 fade in black screen
             _fadeInEvent.Raise(_fadeInTime);
 
             // 6 wait for black screen to fade in completely (await/coroutine event?)
-            await Wait(_fadeInTime);
+            await AsyncHelpers.Wait(_fadeInTime);
 
             // 7 teleport player to spawn point (field: player spawnpoint data container)
             _playerTransform.position = _checkpointReference.Value;
@@ -158,7 +158,7 @@ namespace Game.Player
             // 8 SNAP CAMERA to player
 
             // 8.5 let the black screen linger for a short while
-            await Wait(_lingerTime);
+            await AsyncHelpers.Wait(_lingerTime);
 
             // 9 play respawning animation (field: player animation clip + animation handler, similar to 3)
 
@@ -166,7 +166,7 @@ namespace Game.Player
             _fadeOutEvent.Raise(_fadeOutTime);
 
             // 11 wait for black screen to fade out completely
-            await Wait(_fadeOutTime);
+            await AsyncHelpers.Wait(_fadeOutTime);
 
             // 12 remove player invulnerability (similar to 2)
 
@@ -181,18 +181,6 @@ namespace Game.Player
             _animator.Play(_idleAnimationName);
 
             _playerFSM.DoTransition(_idleState);
-        }
-
-        // waiting method - to be moved into static async helpers
-        [System.Obsolete("Use AsyncHelpers static method.")]
-        private async Task Wait(float seconds)
-        {
-            float elapsedTime = 0f;
-            while (elapsedTime < seconds)
-            {
-                await Task.Yield();
-                elapsedTime += Time.deltaTime;
-            }
         }
     }
 }

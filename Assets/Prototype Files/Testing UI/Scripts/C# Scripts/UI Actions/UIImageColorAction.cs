@@ -8,6 +8,7 @@ namespace Game.UI
     {
         public Image[] Images;
         public Color Col;
+        public bool DoThing = false;
 
         public override void DoAction()
         {

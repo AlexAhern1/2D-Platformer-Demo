@@ -126,7 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _breakable: {fileID: 722857768578972572}
-  _breakableCollider: {fileID: 7347271940724983120}
 --- !u!114 &722857768578972572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,5 +138,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436dd9d572f61c4449e9684931f91feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _useDamageEvent: 0
   _hitsToBreak: 1
+  _playerTag:
+    Name: Player
