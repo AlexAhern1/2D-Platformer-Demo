@@ -12,7 +12,14 @@ namespace Game.UI
 
         public override void DoAction()
         {
-            for (int i = 0; i < Images.Length; i++) Images[i].color = Col;
+            for (int i = 0; i < Images.Length; i++)
+            {
+                var img = Images[i];
+                img.color = Col;
+                img.GraphicUpdateComplete();
+                img.color = Col;
+                if (DoThing) Logger.Log($"DID A THING", img.color);
+            }
         }
     }
 }

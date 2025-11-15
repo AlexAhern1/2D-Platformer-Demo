@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Game.UI
 {
@@ -22,6 +23,15 @@ namespace Game.UI
 
         [Header("Math config")]
         [SerializeField] private float _angleTolerance;
+
+        [Header("<color=lime>TESTING</color>")]
+        [SerializeField] private Image _img;
+
+        [ContextMenu("TEST THE THING")]
+        public void TestThing()
+        {
+            Logger.Log($"{_img.color}", _img.color);
+        }
 
         private void Awake()
         {

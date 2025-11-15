@@ -951,8 +951,8 @@ Transform:
   m_Children:
   - {fileID: 1142112257}
   - {fileID: 871355760}
-  - {fileID: 915549921}
   - {fileID: 869717449}
+  - {fileID: 915549921}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3726,7 +3726,7 @@ Transform:
   - {fileID: 1959074516}
   - {fileID: 878266418}
   m_Father: {fileID: 141359984}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &871355759
 GameObject:
@@ -3888,7 +3888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 915549921}
   m_Layer: 0
-  m_Name: Background
+  m_Name: Backgrounds
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3907,7 +3907,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 141359984}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &921820546
 PrefabInstance:
