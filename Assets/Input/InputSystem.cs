@@ -161,6 +161,15 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Unstuck"",
+                    ""type"": ""Button"",
+                    ""id"": ""2bf31b98-3af7-4a1c-91bd-c278f0fd9377"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -647,6 +656,17 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                     ""action"": ""Cycle"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3e8a197c-2b7d-4eef-8f7c-a095678c4684"",
+                    ""path"": ""<Keyboard>/u"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard Scheme"",
+                    ""action"": ""Unstuck"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1111,6 +1131,7 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
         m_Level_Pause = m_Level.FindAction("Pause", throwIfNotFound: true);
         m_Level_Debug = m_Level.FindAction("Debug", throwIfNotFound: true);
         m_Level_Scroll = m_Level.FindAction("Scroll", throwIfNotFound: true);
+        m_Level_Unstuck = m_Level.FindAction("Unstuck", throwIfNotFound: true);
         // Menus
         m_Menus = asset.FindActionMap("Menus", throwIfNotFound: true);
         m_Menus_Navigate = m_Menus.FindAction("Navigate", throwIfNotFound: true);
@@ -1194,6 +1215,7 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
     private readonly InputAction m_Level_Pause;
     private readonly InputAction m_Level_Debug;
     private readonly InputAction m_Level_Scroll;
+    private readonly InputAction m_Level_Unstuck;
     public struct LevelActions
     {
         private @InputSystem m_Wrapper;
@@ -1213,6 +1235,7 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_Level_Pause;
         public InputAction @Debug => m_Wrapper.m_Level_Debug;
         public InputAction @Scroll => m_Wrapper.m_Level_Scroll;
+        public InputAction @Unstuck => m_Wrapper.m_Level_Unstuck;
         public InputActionMap Get() { return m_Wrapper.m_Level; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1267,6 +1290,9 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                 @Scroll.started -= m_Wrapper.m_LevelActionsCallbackInterface.OnScroll;
                 @Scroll.performed -= m_Wrapper.m_LevelActionsCallbackInterface.OnScroll;
                 @Scroll.canceled -= m_Wrapper.m_LevelActionsCallbackInterface.OnScroll;
+                @Unstuck.started -= m_Wrapper.m_LevelActionsCallbackInterface.OnUnstuck;
+                @Unstuck.performed -= m_Wrapper.m_LevelActionsCallbackInterface.OnUnstuck;
+                @Unstuck.canceled -= m_Wrapper.m_LevelActionsCallbackInterface.OnUnstuck;
             }
             m_Wrapper.m_LevelActionsCallbackInterface = instance;
             if (instance != null)
@@ -1316,6 +1342,9 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
                 @Scroll.started += instance.OnScroll;
                 @Scroll.performed += instance.OnScroll;
                 @Scroll.canceled += instance.OnScroll;
+                @Unstuck.started += instance.OnUnstuck;
+                @Unstuck.performed += instance.OnUnstuck;
+                @Unstuck.canceled += instance.OnUnstuck;
             }
         }
     }
@@ -1445,6 +1474,7 @@ public partial class @InputSystem : IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnDebug(InputAction.CallbackContext context);
         void OnScroll(InputAction.CallbackContext context);
+        void OnUnstuck(InputAction.CallbackContext context);
     }
     public interface IMenusActions
     {

@@ -16,6 +16,9 @@ namespace Game.Player
 
         [SerializeField] private bool _setActiveOnInitialize;
 
+        [Header("Player components")]
+        [SerializeField] private PlayerUnstuckHandler _unstuckHandler;
+
         public void Initialize()
         {
             for (int i = 0; i < _initalizables.Length; i++)
@@ -32,6 +35,8 @@ namespace Game.Player
             {
                 _enables[i].Interface.Enable();
             }
+
+            _unstuckHandler.Enable();
         }
 
         public void Disable()
@@ -40,6 +45,8 @@ namespace Game.Player
             {
                 _enables[i].Interface.Disable();
             }
+
+            _unstuckHandler.Disable();
         }
 
         private void Awake()

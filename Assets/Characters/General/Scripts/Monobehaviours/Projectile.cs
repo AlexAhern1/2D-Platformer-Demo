@@ -70,9 +70,12 @@ namespace Game
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.tag == _obstacleTag)
+            if (collision.CompareTag(_obstacleTag))
             {
                 DespawnEvent?.Invoke(this);
+                _lifeEndTime = 0;
+
+
                 return;
             }
 

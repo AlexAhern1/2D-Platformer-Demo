@@ -87,8 +87,19 @@ namespace Game.Player
             _collisionCounts[direction]++;
         }
 
-
         public bool IsColliding(Vector2 direction) => _collisionCounts[direction] > 0;
+
+        public void ClearCollisions()
+        {
+            _collisionCounts[Vector2.up] = 0;
+            _collisionCounts[Vector2.down] = 0;
+            _collisionCounts[Vector2.left] = 0;
+            _collisionCounts[Vector2.right] = 0;
+
+            _collisions.Clear();
+        }
+
+        public void ToggleCollisions(bool value) => _collider.enabled = value;
 
         private void OnCollisionEnter2D(Collision2D collision)
         {

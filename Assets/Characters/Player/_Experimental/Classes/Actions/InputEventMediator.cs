@@ -31,6 +31,7 @@ namespace Game
         [SerializeField] private InputEvent<float> _interractInputEvent;
         [SerializeField] private InputEvent<float> _inventoryInputEvent;
         [SerializeField] private InputEvent<float> _pauseInputEvent;
+        [SerializeField] private InputEvent<float> _unstuckInputEvent;
 
         [Header("Menus")]
         [SerializeField] private InputEvent<Vector2> _navigateInputEvent;
@@ -62,6 +63,7 @@ namespace Game
             Bind(level.Interact, OnPressInteract);
             Bind(level.OpenInventory, OnPressInventory);
             Bind(level.Pause, OnPressPause);
+            Bind(level.Unstuck, OnPressUnstuck);
 
             Bind(menus.Navigate, OnPressNavigate);
             Bind(menus.Select, OnPressSelect);
@@ -92,6 +94,7 @@ namespace Game
             Unbind(level.Interact, OnPressInteract);
             Unbind(level.OpenInventory, OnPressInventory);
             Unbind(level.Pause, OnPressPause);
+            Unbind(level.Unstuck, OnPressUnstuck);
 
             Unbind(menus.Navigate, OnPressNavigate);
             Unbind(menus.Select, OnPressSelect);
@@ -141,6 +144,7 @@ namespace Game
 
         private void OnPressPause(InputAction.CallbackContext context) => Process(context.ReadValue<float>(), _pauseInputEvent);
 
+        private void OnPressUnstuck(InputAction.CallbackContext context) => Process(context.ReadValue<float>(), _unstuckInputEvent);
         #endregion
 
         #region Menus

@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb2d: {fileID: 4832681925641931184}
   _obstacleTag:
-    Name: Untagged
+    Name: Obstacle
   _alignWithInitialVelocity: 0
   _destroyOnLifetimeOver: 1
   _angleOffset: 0

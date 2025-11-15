@@ -175,6 +175,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hitsToBreak: 2
+  _playerTag:
+    Name: Player
 --- !u!114 &4152191155560152709
 MonoBehaviour:
   m_ObjectHideFlags: 0

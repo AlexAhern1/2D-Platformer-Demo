@@ -139,6 +139,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Unstuck",
+                    "type": "Button",
+                    "id": "2bf31b98-3af7-4a1c-91bd-c278f0fd9377",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -625,6 +634,17 @@
                     "action": "Cycle",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "3e8a197c-2b7d-4eef-8f7c-a095678c4684",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard Scheme",
+                    "action": "Unstuck",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },

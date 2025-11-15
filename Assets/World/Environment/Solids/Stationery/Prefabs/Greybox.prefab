@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1385597475}
   m_Layer: 7
   m_Name: Greybox
-  m_TagString: Moving
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
