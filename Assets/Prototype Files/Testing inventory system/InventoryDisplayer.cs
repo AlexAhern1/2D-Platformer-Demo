@@ -55,9 +55,9 @@ namespace Game.UI
             _enableMenusMapEvent.Raise();
 
             //update all panel entries.
-            foreach (string itemName in _inventory.contents.Keys)
+            foreach (string itemName in _inventory.Contents.Keys)
             {
-                _panelDictionary[itemName].SetAmount(_inventory.contents[itemName]);
+                _panelDictionary[itemName].SetAmount(_inventory.Contents[itemName]);
             }
         }
 

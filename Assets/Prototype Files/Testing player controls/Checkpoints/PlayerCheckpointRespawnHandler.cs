@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace Game.Player
@@ -58,6 +57,10 @@ namespace Game.Player
         [SerializeField] private ResourceSO _playerCurrentHealth;
         [SerializeField] private Stat _playerMaxHealth;
 
+        [Header("Static data")]
+        [SerializeField] private ResourceSO _playerCurrentStatic;
+        [SerializeField] private Stat _playerMaxStatic;
+
         public async void HandleDeathRespawning()
         {
             _disableInputEvent.Raise();
@@ -98,8 +101,9 @@ namespace Game.Player
             // 9 play respawning animation (field: player animation clip + animation handler, similar to 3)
             _animator.Play(_playerReappearAnimation.name);
 
-            // reset player health
+            // reset player health and static
             _playerCurrentHealth.Set(_playerMaxHealth.Value);
+            _playerCurrentStatic.Set(_playerMaxStatic.Value);
 
             // 10 fade out black screen
             _fadeOutEvent.Raise(_fadeOutTime);

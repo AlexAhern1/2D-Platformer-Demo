@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 4799606037484417256}
   - component: {fileID: 8502838600392502685}
   - component: {fileID: 4152191155560152709}
+  - component: {fileID: 8257124115145669219}
   m_Layer: 8
   m_Name: Breakable Background Item
   m_TagString: Destructible
@@ -162,6 +163,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _spawner: {fileID: 4152191155560152709}
   _breakable: {fileID: 8502838600392502685}
+  _shaker: {fileID: 8257124115145669219}
+  _hitParticles: {fileID: 1484196285055668457, guid: 3d7630245f87f6e4b94b2e2956203397, type: 3}
+  _hitSound:
+    _data: {fileID: 11400000, guid: 3269380613507d742b7dc106380682e0, type: 2}
+    _objectPrefab: {fileID: 4355307275000869106, guid: 90fe23273d60a3940a4f11bb12d308b9, type: 3}
+  _breakParticles: {fileID: 1484196285055668457, guid: 3d7630245f87f6e4b94b2e2956203397, type: 3}
+  _breakSound:
+    _data: {fileID: 11400000, guid: fa8beac33399c4b48a883198a0dce265, type: 2}
+    _objectPrefab: {fileID: 4355307275000869106, guid: 90fe23273d60a3940a4f11bb12d308b9, type: 3}
 --- !u!114 &8502838600392502685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 436dd9d572f61c4449e9684931f91feb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitsToBreak: 2
+  _hitsToBreak: 3
   _playerTag:
     Name: Player
 --- !u!114 &4152191155560152709
@@ -200,3 +210,42 @@ MonoBehaviour:
   _spreadRangeDegrees: 30
   _minAngularVelocity: 0.5
   _maxAngularVelocity: 1
+--- !u!114 &8257124115145669219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8493818122863336134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea11f4ca30f81c948b12a5a52aa06325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.0010185242
+      value: 0.3281479
+      inSlope: -0.097692415
+      outSlope: -0.097692415
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.07784151
+    - serializedVersion: 3
+      time: 0.20012207
+      value: 0
+      inSlope: -1.2125279
+      outSlope: -1.2125279
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.056409996
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _duration: 0.2
+  _shakeFrequency: 6
+  _shakeTransform: {fileID: 8493818122863336135}

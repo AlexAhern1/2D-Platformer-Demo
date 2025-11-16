@@ -450,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3654657967647434993, guid: 051e269376f4ec24b9c6d00494d53ecf, type: 3}
       propertyPath: _projectileDamage.RawDamage.Array.data[0].DamageType.Amount
-      value: 4
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3947220100799766219, guid: 051e269376f4ec24b9c6d00494d53ecf, type: 3}
       propertyPath: m_RootOrder
@@ -1493,7 +1493,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8801619284890181072, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}
       propertyPath: _damage.RawDamage.Array.data[0].DamageType.Amount
-      value: 2
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc8686649cb20ea4fb88b8377c428bdd, type: 3}

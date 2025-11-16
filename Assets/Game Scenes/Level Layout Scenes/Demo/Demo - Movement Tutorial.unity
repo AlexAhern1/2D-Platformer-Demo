@@ -4908,6 +4908,10 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 2514859864714006482, guid: 794d15493551fc64eb5b00623e60db40, type: 3}
+      propertyPath: m_Offset.y
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2514859864714006484, guid: 794d15493551fc64eb5b00623e60db40, type: 3}
       propertyPath: m_Name
       value: Checkpoint 1
@@ -4922,7 +4926,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2514859864714006485, guid: 794d15493551fc64eb5b00623e60db40, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2514859864714006485, guid: 794d15493551fc64eb5b00623e60db40, type: 3}
       propertyPath: m_LocalPosition.z

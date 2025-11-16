@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7347271940724983120}
   - component: {fileID: 4382917171909963620}
   - component: {fileID: 722857768578972572}
+  - component: {fileID: 8280017254255896522}
   m_Layer: 8
   m_Name: Breakable Solid Item
   m_TagString: Obstacle
@@ -126,6 +127,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _breakable: {fileID: 722857768578972572}
+  _shaker: {fileID: 8280017254255896522}
+  _hitParticles: {fileID: 1484196285055668457, guid: 3d7630245f87f6e4b94b2e2956203397, type: 3}
+  _hitSound:
+    _data: {fileID: 11400000, guid: 3269380613507d742b7dc106380682e0, type: 2}
+    _objectPrefab: {fileID: 4355307275000869106, guid: 90fe23273d60a3940a4f11bb12d308b9, type: 3}
+  _breakParticles: {fileID: 1484196285055668457, guid: 3d7630245f87f6e4b94b2e2956203397, type: 3}
+  _breakSound:
+    _data: {fileID: 11400000, guid: fa8beac33399c4b48a883198a0dce265, type: 2}
+    _objectPrefab: {fileID: 4355307275000869106, guid: 90fe23273d60a3940a4f11bb12d308b9, type: 3}
 --- !u!114 &722857768578972572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,3 +151,42 @@ MonoBehaviour:
   _hitsToBreak: 1
   _playerTag:
     Name: Player
+--- !u!114 &8280017254255896522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7347271940724983468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea11f4ca30f81c948b12a5a52aa06325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: -0.1927098
+      outSlope: -0.1927098
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.099915326
+    - serializedVersion: 3
+      time: 0.2
+      value: 0
+      inSlope: -0.22006212
+      outSlope: -0.22006212
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.042337
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  _duration: 0.2
+  _shakeFrequency: 5
+  _shakeTransform: {fileID: 7347271940724983471}

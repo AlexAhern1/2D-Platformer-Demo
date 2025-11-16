@@ -127,7 +127,7 @@ MonoBehaviour:
   _contactDamage:
     RawDamage:
     - DamageType:
-        Amount: 10
+        Amount: 20
         Type: 0
       IgnoreResistance: 0
     Weapon: 2

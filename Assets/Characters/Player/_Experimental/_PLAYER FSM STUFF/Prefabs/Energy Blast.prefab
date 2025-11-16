@@ -171,6 +171,8 @@ MonoBehaviour:
   _rb2d: {fileID: 8470409450885699248}
   _obstacleTag:
     Name: Obstacle
+  _friendlyTag:
+    Name: Player
   _alignWithInitialVelocity: 1
   _destroyOnLifetimeOver: 1
   _angleOffset: 0

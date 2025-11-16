@@ -299,9 +299,9 @@ MonoBehaviour:
         Conditions: {fileID: 132347826989399592}
         ConditionID: 2
         AlwaysCheck: 0
-        StartTime: 0.8
-        EndTime: 1
-        EvaluateDuration: 1
+        StartTime: 0.1
+        EndTime: 0.5
+        EvaluateDuration: 0.5
         Filter: {fileID: 5164557940159496429}
         AddAttackOnFinish: 0
         AddAttackAfterDelay: 1
@@ -406,18 +406,17 @@ MonoBehaviour:
       data:
         Telegrapher: {fileID: 914185561755769863}
         StartTime: 0
-        Duration: 0.4
+        Duration: 0.25
     - rid: 983465205960802307
       type: {class: UseMeleeAttackBehaviour, ns: Game, asm: Assembly-CSharp}
       data:
         Rb2d: {fileID: 4237395939732485050}
         Controller: {fileID: 5863695362478667496}
-        Forward: {fileID: 2473505841883777165}
-        DelaySeconds: 0.4
+        DelaySeconds: 0.25
     - rid: 983465205960802314
       type: {class: WaitBehaviour, ns: Game, asm: Assembly-CSharp}
       data:
-        WaitSeconds: 1.2
+        WaitSeconds: 1.25
         TransitionHandler: {fileID: 1425871315441595923}
         OnWaitCompleteTransition: {fileID: 5236766597463816493}
     - rid: 983465205960802315
@@ -598,7 +597,6 @@ MonoBehaviour:
       data:
         Rb2d: {fileID: 4237395939732485050}
         Controller: {fileID: 8042063149211773706}
-        Forward: {fileID: 2473505841883777165}
         DelaySeconds: 1
     - rid: 983465205960802325
       type: {class: TelegraphUIBehaviour, ns: Game, asm: Assembly-CSharp}
@@ -609,7 +607,7 @@ MonoBehaviour:
     - rid: 983465205960802326
       type: {class: WaitBehaviour, ns: Game, asm: Assembly-CSharp}
       data:
-        WaitSeconds: 2.5
+        WaitSeconds: 0.75
         TransitionHandler: {fileID: 1425871315441595923}
         OnWaitCompleteTransition: {fileID: 5236766597463816493}
 --- !u!1 &8291770301818161478
@@ -715,50 +713,7 @@ MonoBehaviour:
   _rendersParent: {fileID: 8291770301818161478}
   _flashColorName: _FlashColor
   _flashAmountName: _FlashAmount
-  _flashColor: {r: 1, g: 1, b: 1, a: 1}
-  _colorCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.5
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 5
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.46061453
-    - serializedVersion: 3
-      time: 0.74904513
-      value: 0.8501495
-      inSlope: -2.0054278
-      outSlope: -2.0054278
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.07935481
-      outWeight: 1
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: -0.04538843
-      outSlope: -0.04538843
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.25268793
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  _duration: 0.3
+  _flashes: []
 --- !u!1 &9060540901127162208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,6 +1664,14 @@ PrefabInstance:
       value: Normal Hit
       objectReference: {fileID: 0}
     - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[983465210696433664].FlashID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[983465210696433665].FlashID
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7674258429495216902, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
       propertyPath: FXCollectionArray.Array.data[0].FXs.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -1869,6 +1832,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8711623969546825132, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[983465205960802311].Comparer
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711623969546825132, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
       propertyPath: managedReferences[983465205960802311].Operator
       value: 3
       objectReference: {fileID: 0}
@@ -1934,6 +1901,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8711623969546825132, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
       propertyPath: managedReferences[983465205960802310].Conditions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711623969546825132, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
+      propertyPath: managedReferences[983465205960802311].CompareWithScaledTime
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8711623969546825132, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
@@ -2057,11 +2028,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fa58190f695341429c99aae968a50d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &2473505841883777165 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6584401230602476297, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}
-  m_PrefabInstance: {fileID: 8733559937577423748}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3809073179968183984 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5615810191671561524, guid: fc8ff46276e3aff4196eb53b2eb390e2, type: 3}

@@ -11,6 +11,7 @@ namespace Game
 
         [Header("Trigger config")]
         [SerializeField] private Tag _obstacleTag;
+        [SerializeField] private Tag _friendlyTag;
 
         [Header("Orientation Config")]
         [SerializeField] private bool _alignWithInitialVelocity;
@@ -70,6 +71,7 @@ namespace Game
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
+            if (collision.CompareTag(_friendlyTag)) return;
             if (collision.CompareTag(_obstacleTag))
             {
                 DespawnEvent?.Invoke(this);

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b874ad505a37c945ba705afbcfa7adf, type: 3}
+  m_Name: Breakable Hit Audio
+  m_EditorClassIdentifier: 
+  mixerGroup: {fileID: -8374119124986606443, guid: 113b8c32ea9563e4e8a7b039e5f9f504, type: 2}
+  Clip: {fileID: 8300000, guid: 62384cba77461a8458a73317e37f47cb, type: 3}
+  Volume: 1
+  Pitch: 1.5
+  PitchVariation: 0.5

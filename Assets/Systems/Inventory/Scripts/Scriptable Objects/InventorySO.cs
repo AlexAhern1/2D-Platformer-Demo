@@ -11,7 +11,7 @@ namespace Game
 
         private readonly Dictionary<string, int> _contents = new();
 
-        public Dictionary<string, int> contents => _contents;
+        public Dictionary<string, int> Contents => _contents;
 
         private void OnEnable()
         {
@@ -76,6 +76,14 @@ namespace Game
 
                 return true;
             }
+        }
+
+        public bool ItemIsInInventory(string itemName, int amount)
+        {
+            bool itemInInventory = _contents.ContainsKey(itemName);
+            if (!itemInInventory) return false;
+
+            return _contents[itemName] <= amount;
         }
     }
 }

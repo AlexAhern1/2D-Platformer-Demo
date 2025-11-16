@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09f7821470be91f4f8a1ee32b2fa1864, type: 3}
   m_Name: Player Max Static Resource
   m_EditorClassIdentifier: 
-  _baseValue: 90000
+  _baseValue: 30
   _modifiers: []
-  _modifiedValue: 90000
+  _modifiedValue: 30
